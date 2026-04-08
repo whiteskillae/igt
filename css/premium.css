@@ -60,12 +60,54 @@
 
 /* Enhancing UI Blur effects elements */
 
-/* Navbar Advanced Blur */
+/* Navbar Advanced Blur & Typography */
+.navbar {
+    transition: var(--transition-slow);
+}
+
 .navbar.scrolled {
-    background: rgba(15, 15, 15, 0.85) !important;
-    backdrop-filter: blur(24px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 10, 10, 0.85) !important;
+    backdrop-filter: blur(25px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(160%) !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    height: 70px !important;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: clamp(0.75rem, 1vw, 0.9rem) !important;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-links i {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.nav-links a:hover i, .nav-links a.active i {
+    opacity: 1;
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--grad-gold);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
 }
 
 /* Sidebar Overlay & Blur */
@@ -147,10 +189,89 @@ html {
     50% { transform: translateY(-10px); }
 }
 
+/* Redesigned Country Feature Cards */
+.country-feature-box {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+}
+
+.country-feature-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--grad-gold);
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.country-feature-box:hover {
+    background: rgba(40, 40, 40, 0.6);
+    transform: translateX(10px);
+    border-color: rgba(212, 175, 55, 0.2);
+    box-shadow: var(--shadow-lg);
+}
+
+.country-feature-box:hover::before {
+    opacity: 1;
+    width: 6px;
+}
+
+.country-flag-wrap {
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+.country-content h3 {
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+}
+
+.license-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Responsiveness for country cards */
+@media (max-width: 768px) {
+    .country-feature-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px;
+        text-align: center;
+    }
+    .country-flag-wrap {
+        align-items: center;
+    }
+    .country-feature-box:hover {
+        transform: translateY(-5px);
+    }
+}
+
 /* Base Body smooth gradient background */
 body {
-    background-color: #121212;
-    background-image: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent 40%),
-                      radial-gradient(circle at bottom left, rgba(192, 57, 43, 0.05), transparent 40%);
+    background-color: #0F0F0F;
+    background-image: radial-gradient(circle at 0% 0%, rgba(212, 175, 55, 0.08), transparent 35%),
+                      radial-gradient(circle at 100% 100%, rgba(192, 57, 43, 0.05), transparent 35%);
     background-attachment: fixed;
 }

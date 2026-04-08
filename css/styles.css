@@ -1,9 +1,5 @@
-/* ============================================
-   IBREU GLOBAL TALENT — PREMIUM DESIGN SYSTEM
-   ============================================ */
-
 /* ---- GOOGLE FONTS ---- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
 
 /* ---- CSS VARIABLES ---- */
 :root {
@@ -46,11 +42,11 @@
   --transition:   all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --font-heading: 'Poppins', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Montserrat', sans-serif;
 
-  --nav-height:   72px;
-  --section-pad:  96px;
+  --nav-height:   80px;
+  --section-pad:  clamp(60px, 10vw, 120px);
 }
 
 /* ---- BASE RESET ---- */
@@ -81,14 +77,28 @@ a   { text-decoration: none; color: inherit; }
 /* ---- TYPOGRAPHY ---- */
 h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--black);
+  letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 800; }
-h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; }
-h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; }
-h4 { font-size: 1.1rem;  font-weight: 600; }
+h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; }
+h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; }
+h3 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 600; }
+h4 { font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 600; }
+
+.section-dark h2 { color: var(--white); }
+.section-offwhite h2 { color: #111111; }
+.section-label { 
+  display: block;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
 
 p  { margin-bottom: 1rem; }
 
