@@ -59,23 +59,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* -----------------------------------------------------------
-     4. SCROLL-BASED FADE-IN ANIMATION
+     4. PREMIUM SCROLL REVEAL (Observer)
   ----------------------------------------------------------- */
-  const fadeEls = document.querySelectorAll('.fade-up');
-  if (fadeEls.length > 0 && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
+  const revealEls = document.querySelectorAll('.reveal, .fade-up');
+  if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          entry.target.classList.add('active');
+          entry.target.classList.add('visible'); // keep legacy compatibility
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-    fadeEls.forEach(el => observer.observe(el));
+    revealEls.forEach(el => revealObserver.observe(el));
   } else {
-    // Fallback: show all immediately
-    fadeEls.forEach(el => el.classList.add('visible'));
+    revealEls.forEach(el => {
+        el.classList.add('active');
+        el.classList.add('visible');
+    });
+  }
+
+  /* -----------------------------------------------------------
+     4b. BACKGROUND PARALLAX
+  ----------------------------------------------------------- */
+  const parallaxHero = document.querySelector('.hero');
+  if (parallaxHero) {
+      window.addEventListener('scroll', () => {
+          const scroll = window.pageYOffset;
+          parallaxHero.style.backgroundPositionY = (scroll * 0.5) + 'px';
+      }, { passive: true });
   }
 
   /* -----------------------------------------------------------
@@ -132,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toast = document.createElement('div');
     toast.className = 'toast-success';
     toast.innerHTML = `
-      <i class="fa-solid fa-circle-check"></i>
+      <i data-lucide="check-circle" stroke-width="2.5"></i>
       <div>
         <strong>Application Submitted!</strong>
         <p>Our team will contact you within 24 hours.</p>
@@ -140,6 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <button onclick="this.parentElement.remove()">✕</button>
     `;
     document.body.appendChild(toast);
+    
+    // Initialize icons in the new toast
+    if(typeof lucide !== 'undefined') { lucide.createIcons({ props: { "data-lucide": true }, scope: toast }); }
 
     requestAnimationFrame(() => toast.classList.add('show'));
     setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 400); }, 5000);
@@ -228,9 +245,10 @@ toastStyle.textContent = `
     transform: translateY(0);
     opacity: 1;
   }
-  .toast-success i.fa-circle-check {
+  .toast-success i {
     color: #D4AF37;
-    font-size: 1.4rem;
+    width: 24px;
+    height: 24px;
     margin-top: 2px;
     flex-shrink: 0;
   }
