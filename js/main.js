@@ -244,3 +244,7 @@ toastStyle.textContent = `
   .toast-success button:hover { color: #fff; }
 `;
 document.head.appendChild(toastStyle);
+
+
+// Initialize Lucide Icons
+if(typeof lucide !== 'undefined') { lucide.createIcons(); }

@@ -82,18 +82,39 @@
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* Cards Enhanced Glassmorphism & Hover */
-.country-card, .service-card, .value-card, .stat-card {
+/* Glassmorphism Modes */
+.glass-dark, .country-card, .stat-card {
     background: rgba(22, 22, 22, 0.7) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.9) !important;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
 }
 
-.country-card:hover, .service-card:hover, .value-card:hover {
+.glass-light, .service-card, .value-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05), inset 0 0 0 1px rgba(255,255,255,0.4);
+    color: var(--text-body) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+
+.glass-dark h1, .glass-dark h2, .glass-dark h3, .glass-dark h4 { color: #fff !important; }
+.glass-dark p { color: rgba(255,255,255,0.7) !important; }
+
+.glass-light h1, .glass-light h2, .glass-light h3, .glass-light h4 { color: var(--black) !important; }
+.glass-light p { color: var(--text-body) !important; }
+
+.country-card:hover, .stat-card:hover {
     transform: translateY(-8px) scale(1.02) !important;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212, 175, 55, 0.15), inset 0 0 0 1px rgba(212, 175, 55, 0.3);
+}
+
+.service-card:hover, .value-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 30px rgba(212, 175, 55, 0.1), inset 0 0 0 1px rgba(212, 175, 55, 0.5);
 }
 
 /* Buttons Glow Effects */

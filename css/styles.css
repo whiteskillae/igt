@@ -3,7 +3,7 @@
    ============================================ */
 
 /* ---- GOOGLE FONTS ---- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
 
 /* ---- CSS VARIABLES ---- */
 :root {
@@ -46,8 +46,8 @@
   --transition:   all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --font-heading: 'Poppins', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Montserrat', sans-serif;
 
   --nav-height:   72px;
   --section-pad:  96px;
@@ -85,12 +85,12 @@ h1, h2, h3, h4, h5 {
   color: var(--black);
 }
 
-h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 800; }
-h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; }
-h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; }
-h4 { font-size: 1.1rem;  font-weight: 600; }
+h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 800; letter-spacing: -1px; }
+h2 { color:#d6d6d6; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; letter-spacing: -0.5px; }
+h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 600; }
+h4 { font-size: 1.2rem; font-weight: 600; font-family: var(--font-body); }
 
-p  { margin-bottom: 1rem; }
+p  {color: #b9b9b9; margin-bottom: 1rem; }
 
 /* ---- CONTAINER ---- */
 .container {
