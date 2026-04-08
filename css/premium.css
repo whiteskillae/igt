@@ -1,0 +1,156 @@
+/* ================================================================
+   PREMIUM EFFECTS & OPTIMIZATIONS
+   ================================================================ */
+
+/* Page Loader */
+.page-loader {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+    opacity: 1;
+}
+
+.page-loader.loader-hidden {
+    opacity: 0;
+    pointer-events: none;
+    filter: blur(10px);
+    transform: scale(1.05);
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation: loaderPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loader-logo {
+    color: #D4AF37;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.loader-spinner {
+    width: 40px; height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: #D4AF37;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes loaderPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(0.98); }
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+/* Enhancing UI Blur effects elements */
+
+/* Navbar Advanced Blur */
+.navbar.scrolled {
+    background: rgba(15, 15, 15, 0.85) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Sidebar Overlay & Blur */
+.sidebar {
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-left: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.sidebar-overlay.active {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Cards Enhanced Glassmorphism & Hover */
+.country-card, .service-card, .value-card, .stat-card {
+    background: rgba(22, 22, 22, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(255,255,255,0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+
+.country-card:hover, .service-card:hover, .value-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212, 175, 55, 0.15), inset 0 0 0 1px rgba(212, 175, 55, 0.3);
+}
+
+/* Buttons Glow Effects */
+.btn-cta, .btn-primary {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cta::after, .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    transform: rotate(30deg);
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+.btn-cta:hover::after, .btn-primary:hover::after {
+    transform: rotate(30deg) translate(50%, 50%);
+    opacity: 1;
+}
+
+.btn-cta:hover, .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Smooth Scrolling Enforced */
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Floating WA Button Bounce & Glow */
+.floating-wa {
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    animation: floatWa 3s ease-in-out infinite;
+}
+
+.floating-wa:hover {
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6), 0 0 40px rgba(37, 211, 102, 0.4);
+    transform: translateY(-8px) scale(1.1);
+}
+
+@keyframes floatWa {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Base Body smooth gradient background */
+body {
+    background-color: #121212;
+    background-image: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(192, 57, 43, 0.05), transparent 40%);
+    background-attachment: fixed;
+}

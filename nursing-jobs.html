@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursing Jobs Abroad | IBREU Global Talent</title>
+  <meta name="description" content="Apply for international nursing opportunities in UAE, Qatar, Australia, Germany, and Georgia. Full licensing, documentation, and relocation support.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/premium.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">IBREU Global Talent</span>
+        <span class="logo-sub">Inspiring Potential Worldwide</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="nursing-jobs.html" class="active">Nursing Jobs</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="employers.html">Employers</a>
+        <a href="training.html">Training</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#apply-form" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;">
+          <i class="fa-solid fa-arrow-right"></i> Apply Now
+        </a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="nav-logo sidebar-logo"><span class="logo-main">IBREU</span><span class="logo-sub">Global Talent</span></a>
+    <button class="sidebar-close" id="sidebar-close"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+    <a href="services.html"><i class="fa-solid fa-briefcase"></i> Services</a>
+    <a href="nursing-jobs.html"><i class="fa-solid fa-stethoscope"></i> Nursing Jobs</a>
+    <a href="candidates.html"><i class="fa-solid fa-user-nurse"></i> For Candidates</a>
+    <a href="employers.html"><i class="fa-solid fa-building"></i> For Employers</a>
+    <a href="training.html"><i class="fa-solid fa-graduation-cap"></i> Training & Support</a>
+    <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="#apply-form" class="btn btn-cta" style="justify-content:center;"><i class="fa-solid fa-arrow-right"></i> Apply Now</a>
+    <a href="https://wa.me/971527171134" target="_blank" class="btn btn-wa" style="justify-content:center;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</aside>
+
+<main class="page-content">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> Nursing Jobs
+      </div>
+      <h1>International Nursing Opportunities</h1>
+      <p>We place qualified nurses in leading healthcare institutions across five global destinations. Every placement includes full documentation support, licensing guidance, and relocation assistance.</p>
+    </div>
+  </div>
+
+  <!-- APPLY FORM SECTION -->
+  <section class="section section-offwhite" id="apply-form">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label fade-up">Apply Now</span>
+        <h2 class="fade-up delay-1">Submit Your Application</h2>
+        <div class="divider-gold fade-up delay-2"></div>
+        <p class="fade-up delay-2">Fill this short form and our team will match you with the best opportunity within 24 hours.</p>
+      </div>
+
+      <div class="apply-form-wrap fade-up">
+        <div class="form-title">Application Form</div>
+        <div class="form-subtitle">All fields marked with * are required.</div>
+        <form id="apply-form-el" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ap-name">Full Name *</label>
+              <input type="text" id="ap-name" name="name" class="form-control" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="ap-phone">Phone Number *</label>
+              <input type="tel" id="ap-phone" name="phone" class="form-control" required placeholder="+971 50 123 4567">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ap-email">Email Address *</label>
+            <input type="email" id="ap-email" name="email" class="form-control" required placeholder="email@example.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ap-qual">Qualification / Specialty *</label>
+              <input type="text" id="ap-qual" name="qualification" class="form-control" required placeholder="e.g. BSc Nursing, ICU">
+            </div>
+            <div class="form-group">
+              <label for="ap-exp">Years of Experience *</label>
+              <input type="number" id="ap-exp" name="experience" class="form-control" required min="0" placeholder="e.g. 3">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ap-country">Preferred Country *</label>
+            <select id="ap-country" name="country" class="form-control" required>
+              <option value="">Select a country...</option>
+              <option value="UAE">🇦🇪 UAE — United Arab Emirates</option>
+              <option value="Qatar">🇶🇦 Qatar</option>
+              <option value="Australia">🇦🇺 Australia</option>
+              <option value="Germany">🇩🇪 Germany</option>
+              <option value="Georgia">🇬🇪 Georgia</option>
+              <option value="Open">Open to suggestions</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ap-cv">Upload CV (Optional)</label>
+            <input type="file" id="ap-cv" name="cv" class="form-control" accept=".pdf,.doc,.docx">
+          </div>
+          <button type="submit" class="btn btn-cta form-submit">
+            <i class="fa-solid fa-paper-plane"></i> Submit Application
+          </button>
+        </form>
+        <div style="text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid #F0EBE0;">
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px;">Or reach us directly on WhatsApp for instant response:</p>
+          <a href="https://wa.me/971527171134" target="_blank" class="btn btn-wa">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp: +971 52 717 1134
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTRY BREAKDOWN SECTION -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label fade-up">5 Destinations</span>
+        <h2 class="fade-up delay-1">Detailed Country Opportunities</h2>
+        <div class="divider-gold fade-up delay-2"></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:32px;">
+
+        <!-- UAE -->
+        <div class="service-card fade-up" style="background:var(--black-card);border-color:rgba(255,255,255,0.06);">
+          <span class="service-num" style="color:rgba(212,175,55,0.05);">01</span>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <span style="font-size:3rem;">🇦🇪</span>
+            <div>
+              <h3 style="color:var(--white);">UAE — United Arab Emirates</h3>
+              <div class="license-tag" style="margin:6px 0 0;"><i class="fa-solid fa-certificate"></i> DHA | DOH | HAAD | MOH</div>
+            </div>
+          </div>
+          <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;">The UAE is one of the highest-demand markets for international nurses, with roles across government hospitals, private clinics, and specialist homecare facilities.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Tax-free competitive salary</li><li><i class="fa-solid fa-check"></i> Employment visa sponsored</li><li><i class="fa-solid fa-check"></i> Accommodation provided</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Full health insurance</li><li><i class="fa-solid fa-check"></i> Licensing exam support</li><li><i class="fa-solid fa-check"></i> Dataflow verification help</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Transportation support</li><li><i class="fa-solid fa-check"></i> Career advancement</li><li><i class="fa-solid fa-check"></i> Professional environment</li></ul>
+          </div>
+        </div>
+
+        <!-- Qatar -->
+        <div class="service-card fade-up delay-1" style="background:var(--black-card);border-color:rgba(255,255,255,0.06);">
+          <span class="service-num" style="color:rgba(212,175,55,0.05);">02</span>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <span style="font-size:3rem;">🇶🇦</span>
+            <div>
+              <h3 style="color:var(--white);">Qatar</h3>
+              <div class="license-tag" style="margin:6px 0 0;"><i class="fa-solid fa-certificate"></i> QCHP Licensing</div>
+            </div>
+          </div>
+          <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;">Qatar's healthcare sector continues to expand rapidly. International nurses are in high demand for hospitals, specialty clinics, and ongoing national development projects.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Competitive salary + accommodation</li><li><i class="fa-solid fa-check"></i> Fast hiring process</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> QCHP guidance &amp; support</li><li><i class="fa-solid fa-check"></i> Full relocation assistance</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Employment visa processing</li><li><i class="fa-solid fa-check"></i> Long-term career development</li></ul>
+          </div>
+        </div>
+
+        <!-- Australia -->
+        <div class="service-card fade-up delay-2" style="background:var(--black-card);border-color:rgba(255,255,255,0.06);">
+          <span class="service-num" style="color:rgba(212,175,55,0.05);">03</span>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <span style="font-size:3rem;">🇦🇺</span>
+            <div>
+              <h3 style="color:var(--white);">Australia</h3>
+              <div class="license-tag" style="margin:6px 0 0;"><i class="fa-solid fa-certificate"></i> AHPRA Registration</div>
+            </div>
+          </div>
+          <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;">Australia offers some of the highest nursing salaries globally, an outstanding healthcare system, and a clear pathway to permanent residency for qualified international nurses.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> World-class salary packages</li><li><i class="fa-solid fa-check"></i> PR pathway available</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> AHPRA registration support</li><li><i class="fa-solid fa-check"></i> IELTS / OET guidance</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Excellent work-life balance</li><li><i class="fa-solid fa-check"></i> Long-term career growth</li></ul>
+          </div>
+        </div>
+
+        <!-- Germany -->
+        <div class="service-card fade-up delay-3" style="background:var(--black-card);border-color:rgba(255,255,255,0.06);">
+          <span class="service-num" style="color:rgba(212,175,55,0.05);">04</span>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <span style="font-size:3rem;">🇩🇪</span>
+            <div>
+              <h3 style="color:var(--white);">Germany</h3>
+              <div class="license-tag" style="margin:6px 0 0;"><i class="fa-solid fa-certificate"></i> Approbation License</div>
+            </div>
+          </div>
+          <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;">Germany has a significant and growing shortage of healthcare professionals, making it one of the most accessible and structured international pathways for nurses.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Structured career pathway</li><li><i class="fa-solid fa-check"></i> Language training (A2–B2)</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Approbation guidance</li><li><i class="fa-solid fa-check"></i> EU employment rights</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Employer-sponsored relocation</li><li><i class="fa-solid fa-check"></i> Affordable entry pathway</li></ul>
+          </div>
+        </div>
+
+        <!-- Georgia -->
+        <div class="service-card fade-up delay-4" style="background:var(--black-card);border-color:rgba(255,255,255,0.06);">
+          <span class="service-num" style="color:rgba(212,175,55,0.05);">05</span>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <span style="font-size:3rem;">🇬🇪</span>
+            <div>
+              <h3 style="color:var(--white);">Georgia</h3>
+              <div class="license-tag" style="margin:6px 0 0;"><i class="fa-solid fa-certificate"></i> Ministry of Health</div>
+            </div>
+          </div>
+          <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;">Georgia offers an accessible and beginner-friendly entry point for nurses seeking international experience, with a straightforward licensing process and growing healthcare sector.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Beginner-friendly entry</li><li><i class="fa-solid fa-check"></i> Quick visa processing</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Affordable setup costs</li><li><i class="fa-solid fa-check"></i> Safe work environment</li></ul>
+            <ul class="benefits-list"><li><i class="fa-solid fa-check"></i> Gateway to EU destinations</li><li><i class="fa-solid fa-check"></i> Growing demand</li></ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section text-center section-offwhite">
+    <div class="container fade-up">
+      <span class="section-label">Ready?</span>
+      <h2 style="margin-bottom:16px;">Take the First Step Today</h2>
+      <div class="divider-gold"></div>
+      <p style="max-width:540px;margin:0 auto 40px;">Apply online or contact us directly on WhatsApp for an instant response from our team.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="#apply-form" class="btn btn-cta"><i class="fa-solid fa-arrow-up"></i> Apply Now</a>
+        <a href="https://wa.me/971527171134" target="_blank" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top-border"></div>
+  <div class="footer-body">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">IBREU Global Talent</div>
+          <div class="footer-tagline">Inspiring Potential Worldwide</div>
+          <p>UAE-based global recruitment and healthcare consultancy connecting skilled professionals to international career opportunities.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Services</a></li>
+            <li><a href="nursing-jobs.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Nursing Jobs</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Destinations</h5>
+          <ul>
+            <li><a href="nursing-jobs.html">🇦🇪 UAE</a></li>
+            <li><a href="nursing-jobs.html">🇶🇦 Qatar</a></li>
+            <li><a href="nursing-jobs.html">🇦🇺 Australia</a></li>
+            <li><a href="nursing-jobs.html">🇩🇪 Germany</a></li>
+            <li><a href="nursing-jobs.html">🇬🇪 Georgia</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span><a href="https://wa.me/971527171134">+971 52 717 1134</a></span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:info@ibreuglobaltalent.com">info@ibreuglobaltalent.com</a></span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>UAE — United Arab Emirates</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <span>&copy; 2025 IBREU Global Talent. All rights reserved.</span>
+    <span>Nursing Jobs UAE &middot; Healthcare Recruitment</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/971527171134" class="floating-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="js/main.js"></script>
+<script src="js/transitions.js"></script>
+</body>
+</html>
