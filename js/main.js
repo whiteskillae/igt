@@ -61,25 +61,37 @@ document.addEventListener('DOMContentLoaded', () => {
   /* -----------------------------------------------------------
      4. PREMIUM SCROLL REVEAL (Observer)
   ----------------------------------------------------------- */
-  const revealEls = document.querySelectorAll('.reveal, .fade-up');
+  document.body.classList.add('js-active'); // For CSS fallback
+
+  const revealEls = document.querySelectorAll('.reveal, .fade-up, .step-item');
+  
   if (revealEls.length > 0 && 'IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          entry.target.classList.add('visible'); // keep legacy compatibility
+          entry.target.classList.add('visible');
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    }, { 
+      threshold: 0.1, 
+      rootMargin: '0px 0px -40px 0px' 
+    });
 
     revealEls.forEach(el => revealObserver.observe(el));
   } else {
-    revealEls.forEach(el => {
-        el.classList.add('active');
-        el.classList.add('visible');
-    });
+    // Fallback for older browsers or if observer fails
+    revealEls.forEach(el => el.classList.add('active', 'visible'));
   }
+
+  // Backup reveal check in case observer misses elements (force visibility on long pages)
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.active), .fade-up:not(.active)').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('active', 'visible');
+    });
+  }, 1000);
 
   /* -----------------------------------------------------------
      4b. BACKGROUND PARALLAX
