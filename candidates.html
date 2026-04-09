@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Candidates | IBREU Global Talent</title>
-  <meta name="description" content="Your international nursing career starts here. Register your profile and get matched with global opportunities in UAE, Qatar, Australia, Germany, and Georgia.">
+  <title>For Candidates | International Career Support & Placements | IBREU</title>
+  <meta name="description" content="Empowering professional growth abroad. We provide nurses and drivers with end-to-end relocation support, documentation assistance, and confirmed job leads.">
+  <meta name="keywords" content="Nursing Careers Abroad, International Job Placement, Relocation Support, Driver Jobs Overseas, IBREU Talent">
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
@@ -14,29 +15,43 @@
 
 <nav class="navbar" id="navbar">
   <div class="container"><div class="nav-inner">
-    <a href="index.html" class="nav-logo"><span class="logo-icon">IGT</span><div><span class="logo-main">IBREU Global</span><span class="logo-sub">Inspiring Potential</span></div></a>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">IGT</span>
+    </a>
     <div class="nav-links" id="nav-links">
       <a href="index.html"><i data-lucide="home"></i> Home</a>
       <a href="about.html"><i data-lucide="info"></i> About</a>
       <a href="services.html"><i data-lucide="briefcase"></i> Services</a>
-      <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Jobs</a>
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-trigger"><i data-lucide="briefcase"></i> Jobs <i data-lucide="chevron-down" class="chevron"></i></a>
+        <div class="dropdown-content">
+          <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
+          <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
+        </div>
+      </div>
       <a href="candidates.html" class="active"><i data-lucide="user-round"></i> Candidates</a>
       <a href="employers.html"><i data-lucide="building"></i> Employers</a>
       <a href="training.html"><i data-lucide="graduation-cap"></i> Training</a>
       <a href="contact.html"><i data-lucide="mail"></i> Contact</a>
     </div>
     <div class="nav-actions">
-      <a href="nursing-jobs.html" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;"><i data-lucide="arrow-right"></i> Apply Now</a>
+      <a href="index.html#jobs-now" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;"><i data-lucide="briefcase"></i> Open Jobs</a>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </div></div>
 </nav>
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebar-header"><a href="index.html" class="nav-logo sidebar-logo"><span class="logo-main">IBREU</span><span class="logo-sub">Global Talent</span></a><button class="sidebar-close" id="sidebar-close"><i data-lucide="xmark"></i></button></div>
+  <div class="sidebar-header">
+    <a href="index.html" class="nav-logo sidebar-logo">
+      <span class="logo-icon" style="width:40px; height:40px; background:var(--grad-gold); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--black);">IGT</span>
+    </a>
+    <button class="sidebar-close" id="sidebar-close"><i data-lucide="xmark"></i></button>
+  </div>
   <nav class="sidebar-nav">
     <a href="index.html"><i data-lucide="home"></i> Home</a><a href="about.html"><i data-lucide="info"></i> About Us</a>
     <a href="services.html"><i data-lucide="briefcase"></i> Services</a><a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
+    <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
     <a href="candidates.html"><i data-lucide="heart-pulse"></i> For Candidates</a><a href="employers.html"><i data-lucide="building"></i> For Employers</a>
     <a href="training.html"><i data-lucide="graduation-cap"></i> Training</a><a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
   </nav>
@@ -108,12 +123,47 @@
         <h2 class="reveal delay-1">Your Journey with IBREU Global Talent</h2>
         <div class="divider-gold reveal delay-2"></div>
       </div>
-      <div class="steps-grid">
-        <div class="step-item reveal"><div class="step-num">1</div><div class="step-body"><h4>Register</h4><p>Register your profile and share your qualifications and career goals.</p></div></div>
-        <div class="step-item reveal delay-1"><div class="step-num">2</div><div class="step-body"><h4>Free Consultation</h4><p>Receive a free career consultation and country-specific guidance from our team.</p></div></div>
-        <div class="step-item reveal delay-2"><div class="step-num">3</div><div class="step-body"><h4>Documentation Support</h4><p>Get full support with documentation, Dataflow, and licensing exam preparation.</p></div></div>
-        <div class="step-item reveal delay-3"><div class="step-num">4</div><div class="step-body"><h4>Interview Preparation</h4><p>Attend our mock interview sessions and professional presentation coaching.</p></div></div>
-        <div class="step-item reveal delay-4"><div class="step-num">5</div><div class="step-body"><h4>Placement &amp; Departure</h4><p>Secure your placement and receive full pre-departure support to start with confidence.</p></div></div>
+      <div class="roadmap-container">
+        <!-- Step 1 -->
+        <div class="roadmap-step reveal">
+          <div class="roadmap-num">1</div>
+          <div class="roadmap-content">
+            <h4>Register</h4>
+            <p>Register your profile and share your qualifications and career goals.</p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="roadmap-step reveal delay-1">
+          <div class="roadmap-num">2</div>
+          <div class="roadmap-content">
+            <h4>Free Consultation</h4>
+            <p>Receive a free career consultation and country-specific guidance from our team.</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="roadmap-step reveal delay-2">
+          <div class="roadmap-num">3</div>
+          <div class="roadmap-content">
+            <h4>Documentation Support</h4>
+            <p>Get full support with documentation, Dataflow, and licensing exam preparation.</p>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="roadmap-step reveal delay-3">
+          <div class="roadmap-num">4</div>
+          <div class="roadmap-content">
+            <h4>Interview Preparation</h4>
+            <p>Attend our mock interview sessions and professional presentation coaching.</p>
+          </div>
+        </div>
+        <!-- Step 5 -->
+        <div class="roadmap-step reveal delay-4">
+          <div class="roadmap-num">5</div>
+          <div class="roadmap-content">
+            <h4>Placement &amp; Departure</h4>
+            <p>Secure your placement and receive full pre-departure support to start with confidence.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -133,27 +183,74 @@
 
 </main>
 
+<!-- ==================== FOOTER ==================== -->
 <footer class="footer">
   <div class="footer-top-border"></div>
-  <div class="footer-body"><div class="container"><div class="footer-grid">
-    <div class="footer-brand"><div class="footer-logo">IBREU Global Talent</div><div class="footer-tagline">Inspiring Potential Worldwide</div><p>UAE-based global recruitment connecting professionals to international opportunities.</p></div>
-    <div class="footer-col"><h5>Quick Links</h5><ul>
-      <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Home</a></li>
-      <li><a href="nursing-jobs.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Nursing Jobs</a></li>
-      <li><a href="candidates.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> For Candidates</a></li>
-      <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Destinations</h5><ul>
-      <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> UAE</a></li><li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Qatar</a></li>
-      <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Australia</a></li><li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Germany</a></li>
-      <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Georgia</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Contact Us</h5>
-      <div class="footer-contact-item"><i data-lucide="message-circle" stroke-width="2.5"></i><span><a href="https://wa.me/971527171134">+971 52 717 1134</a></span></div>
-      <div class="footer-contact-item"><i data-lucide="mail"></i><span><a href="mailto:info@ibreuglobaltalent.com">info@ibreuglobaltalent.com</a></span></div>
+  <div class="footer-body">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <div class="footer-logo">IBREU Global Talent</div>
+          <div class="footer-tagline">Inspiring Potential Worldwide</div>
+          <p>UAE-based global recruitment and healthcare consultancy connecting skilled professionals to international career opportunities across UAE, Qatar, Australia, Germany, and beyond.</p>
+          <div class="footer-socials" style="margin-top:20px; display:flex; gap:15px;">
+             <a href="#" style="color:var(--gold);"><i data-lucide="facebook"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="instagram"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="linkedin"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col reveal delay-1">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="nursing-jobs.html">Nursing Jobs</a></li>
+            <li><a href="taxi-driver-jobs.html">Taxi Driver Jobs</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col reveal delay-2">
+          <h5>Destinations</h5>
+          <ul>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> UAE</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Qatar</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Australia</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Germany</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Georgia</a></li>
+          </ul>
+        </div>
+        <div class="footer-col reveal delay-3">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item">
+            <i data-lucide="message-circle" stroke-width="2.5"></i>
+            <span><a href="https://wa.me/971527171134" target="_blank">+971 52 717 1134</a><br><small style="color:rgba(255,255,255,0.4);">WhatsApp Available 24/7</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="mail"></i>
+            <span><a href="mailto:info@ibreuglobaltalent.com">info@ibreuglobaltalent.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="map-pin"></i>
+            <span>Business Center, UAE<br><small style="color:rgba(255,255,255,0.4);">United Arab Emirates</small></span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div></div></div>
-  <div class="footer-bottom container"><span>&copy; 2025 IBREU Global Talent. All rights reserved.</span></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+      <span>&copy; 2025 IBREU Global Talent. All rights reserved.</span>
+      <div class="footer-legal" style="display:flex; gap:20px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <a href="https://wa.me/971527171134" class="floating-wa" target="_blank"><i data-lucide="message-circle" stroke-width="2.5"></i></a>

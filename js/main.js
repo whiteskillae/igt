@@ -226,6 +226,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     counters.forEach(c => cObs.observe(c));
   }
+
+  /* -----------------------------------------------------------
+     8. CHART.JS INITIALIZATION
+  ------------------------------------------- */
+  const ctx = document.getElementById('demandChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2020', '2021', '2022', '2023', '2024', '2025 (Prop)'],
+        datasets: [{
+          label: 'Global Nursing Demand Index',
+          data: [65, 72, 85, 92, 98, 105],
+          borderColor: '#D4AF37',
+          backgroundColor: 'rgba(212, 175, 55, 0.1)',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 3,
+          pointBackgroundColor: '#D4AF37'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            ticks: { color: '#888' }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#888' }
+          }
+        }
+      }
+    });
+  }
 });
 
 

@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IBREU Global Talent | Nursing Jobs UAE | International Healthcare Recruitment</title>
-  <meta name="description" content="Build your nursing career abroad. IBREU Global Talent connects skilled healthcare professionals to verified international opportunities in UAE, Qatar, Australia, Germany & Georgia.">
-  <meta property="og:title" content="IBREU Global Talent — Inspiring Potential Worldwide">
-  <meta property="og:description" content="International nursing jobs in UAE, Qatar, Australia, Germany & Georgia. Complete guidance from licensing to placement.">
+  <title>IBREU Global Talent | Healthcare & Transport Recruitment UAE & Europe</title>
+  <meta name="description" content="Leading UAE-based global recruitment agency specializing in healthcare (Nursing) and transportation (RTA Taxi) placements across UAE, Qatar, Australia, Germany, and beyond. Build your success abroad with professional support.">
+  <meta name="keywords" content="International Nursing Jobs, RTA Taxi Driver Jobs Dubai, UAE Healthcare Recruitment, Qatar Nursing Vacancy, Germany Nursing Jobs, IBREU Global Talent, Global Career Consulting">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="IBREU Global Talent">
+  <link rel="canonical" href="https://ibreuglobaltalent.com/">
+  
+  <meta property="og:title" content="IBREU Global Talent — Professional Recruitment Worldwide">
+  <meta property="og:description" content="Connect with top global opportunities in Nursing and Transport. We provide end-to-end guidance from licensing to international placement.">
+  <meta property="og:image" content="https://ibreuglobaltalent.com/assets/img/hero-professional.png">
+  <meta property="og:url" content="https://ibreuglobaltalent.com/">
   <meta property="og:type" content="website">
   <!-- Font Awesome -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -16,6 +23,8 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/premium.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -25,16 +34,19 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <span class="logo-icon">IGT</span>
-        <div>
-         
-        </div>
       </a>
 
       <div class="nav-links" id="nav-links">
         <a href="index.html" class="active"><i data-lucide="home"></i> Home</a>
         <a href="about.html"><i data-lucide="info"></i> About</a>
         <a href="services.html"><i data-lucide="briefcase"></i> Services</a>
-        <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Jobs</a>
+        <div class="nav-dropdown">
+          <a href="#" class="dropdown-trigger"><i data-lucide="briefcase"></i> Jobs <i data-lucide="chevron-down" class="chevron"></i></a>
+          <div class="dropdown-content">
+            <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
+            <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
+          </div>
+        </div>
         <a href="candidates.html"><i data-lucide="user-round"></i> Candidates</a>
         <a href="employers.html"><i data-lucide="building"></i> Employers</a>
         <a href="training.html"><i data-lucide="graduation-cap"></i> Training</a>
@@ -42,8 +54,8 @@
       </div>
 
       <div class="nav-actions">
-        <a href="nursing-jobs.html" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;">
-          <i data-lucide="arrow-right"></i> Apply Now
+        <a href="#jobs-now" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;">
+          <i data-lucide="briefcase"></i> Open Jobs
         </a>
         <button class="hamburger" id="hamburger" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -58,8 +70,7 @@
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
     <a href="index.html" class="nav-logo sidebar-logo">
-      <span class="logo-main">IBREU</span>
-      <span class="logo-sub">Global Talent</span>
+      <span class="logo-icon" style="width:40px; height:40px; background:var(--grad-gold); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--black);">IGT</span>
     </a>
     <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
       <i data-lucide="xmark"></i>
@@ -71,6 +82,7 @@
     <a href="about.html"><i data-lucide="info"></i> About Us</a>
     <a href="services.html"><i data-lucide="briefcase"></i> Services</a>
     <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
+    <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
     <a href="candidates.html"><i data-lucide="heart-pulse"></i> For Candidates</a>
     <a href="employers.html"><i data-lucide="building"></i> For Employers</a>
     <a href="training.html"><i data-lucide="graduation-cap"></i> Training & Support</a>
@@ -99,73 +111,82 @@
           UAE-Based Global Healthcare Recruitment
         </div>
         <h1 class="fade-up delay-1">
-          Build Your <span class="highlight">Nursing Career</span><br>
-          Abroad with Trusted Support
+          Build Your <span class="highlight">Success Abroad</span><br>
+          with Professional Global Support
         </h1>
         <p class="hero-sub fade-up delay-2">
-          Opportunities in UAE, Qatar, Australia, Germany &amp; Georgia. From licensing to placement — complete guidance at every step.
+          Healthcare &amp; Transportation opportunities in UAE, Qatar, Australia, Germany &amp; Georgia. From licensing to placement — complete guidance at every step.
         </p>
         <div class="btn-group fade-up delay-3">
           <a href="nursing-jobs.html" class="btn btn-cta">
-            <i data-lucide="arrow-right"></i> Apply for Nursing Jobs
+            <i data-lucide="stethoscope"></i> Nursing Jobs
+          </a>
+          <a href="taxi-driver-jobs.html" class="btn btn-gold">
+            <i data-lucide="car"></i> Taxi Driver Jobs
           </a>
           <a href="https://wa.me/971527171134" target="_blank" class="btn btn-dark-outline">
             <i data-lucide="message-circle" stroke-width="2.5"></i> WhatsApp: +971 52 717 1134
           </a>
-        </div>
-        <div class="hero-stats fade-up delay-4">
-          <div class="hero-stat">
-            <div class="num" data-count="5" data-suffix="+">0+</div>
-            <div class="label">Countries</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num" data-count="6" data-suffix="">0</div>
-            <div class="label">Core Services</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num" data-count="100" data-suffix="%">0%</div>
-            <div class="label">Guided Process</div>
-          </div>
-          <div class="hero-stat">
-            <div class="num" data-count="24" data-suffix="/7">0/7</div>
-            <div class="label">WhatsApp Support</div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TRUST STRIP -->
-  <div class="trust-strip">
+  <div class="trust-strip hover-shine">
     <div class="container">
       <div class="trust-items">
         <div class="trust-item reveal">
-          <i data-lucide="globe-2"></i>
-          <span>International Placements</span>
+          <i data-lucide="globe"></i>
+          <span>Global Placements</span>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item reveal delay-1">
-          <i data-lucide="file-shield"></i>
-          <span>Full Documentation Support</span>
+          <i data-lucide="verified"></i>
+          <span>Full Documentation</span>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item reveal delay-2">
-          <i data-lucide="shield-halved"></i>
+          <i data-lucide="shield-check"></i>
           <span>Transparent Process</span>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item reveal delay-3">
-          <i data-lucide="chart-line"></i>
-          <span>Career-Focused Approach</span>
+          <i data-lucide="trending-up"></i>
+          <span>Career Growth</span>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item reveal delay-4">
-          <i data-lucide="message-circle" stroke-width="2.5"></i>
-          <span>WhatsApp Available</span>
+          <i data-lucide="headset"></i>
+          <span>24/7 Support</span>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- STATS SECTION -->
+  <section class="section section-dark pt-0">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-box reveal">
+          <span class="count" data-count="1500" data-suffix="+">0</span>
+          <span class="label">Candidates Placed</span>
+        </div>
+        <div class="stat-box reveal delay-1">
+          <span class="count" data-count="12" data-suffix="+">0</span>
+          <span class="label">Countries Served</span>
+        </div>
+        <div class="stat-box reveal delay-2">
+          <span class="count" data-count="98" data-suffix="%">0</span>
+          <span class="label">Success Rate</span>
+        </div>
+        <div class="stat-box reveal delay-3">
+          <span class="count" data-count="10" data-suffix="+">0</span>
+          <span class="label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="section-divider dark-to-offwhite"></div>
 
@@ -181,101 +202,111 @@
         </p>
       </div>
 
-      <div class="cards-grid">
+      <div class="destination-grid">
 
         <!-- UAE -->
-        <div class="country-card fade-up glass-dark">
-          <div class="country-card-header glass-dark">
-            <span class="country-flag"><i data-lucide="map-pin"></i></span>
-            <div>
-              <h3>UAE</h3>
-              <p class="subtitle">Hospitals, Clinics &amp; Homecare</p>
+        <div class="destination-card reveal hover-shine">
+          <div class="destination-img">
+            <img src="assets/img/uae_healthcare.png" alt="Healthcare in UAE">
+            <div class="destination-badges">
+              <span class="badge-gold">Top Destination</span>
+              <span class="badge-demand">High Demand</span>
             </div>
           </div>
-          <div class="license-tag"><i data-lucide="certificate"></i> DHA / DOH / HAAD / MOH</div>
-          <ul class="benefits-list">
-            <li><i data-lucide="check"></i> Tax-free competitive salary</li>
-            <li><i data-lucide="check"></i> Employment visa fully sponsored</li>
-            <li><i data-lucide="check"></i> Accommodation provided</li>
-            <li><i data-lucide="check"></i> Full health insurance</li>
-            <li><i data-lucide="check"></i> Licensing exam support</li>
-          </ul>
+          <div class="destination-body">
+            <h3>UAE</h3>
+            <p class="salary"><i data-lucide="banknote"></i> 8,000 - 15,000 AED / month</p>
+            <ul class="destination-highlights">
+              <li><i data-lucide="check"></i> DHA / DOH / HAAD Licensing</li>
+              <li><i data-lucide="check"></i> Tax-Free Salary</li>
+              <li><i data-lucide="check"></i> Full Relocation Support</li>
+            </ul>
+            <a href="nursing-jobs.html" class="btn btn-gold w-100" style="width:100%; justify-content:center;">View Details</a>
+          </div>
         </div>
 
         <!-- Qatar -->
-        <div class="country-card fade-up delay-1 glass-dark">
-          <div class="country-card-header glass-dark">
-            <span class="country-flag"><i data-lucide="map-pin"></i></span>
-            <div>
-              <h3>Qatar</h3>
-              <p class="subtitle">Hospitals &amp; Healthcare Facilities</p>
+        <div class="destination-card reveal delay-1 hover-shine">
+          <div class="destination-img">
+            <img src="assets/img/qatar_healthcare.png" alt="Healthcare in Qatar">
+            <div class="destination-badges">
+              <span class="badge-gold">Fast Track</span>
+              <span class="badge-demand">High Demand</span>
             </div>
           </div>
-          <div class="license-tag"><i data-lucide="certificate"></i> QCHP Licensing</div>
-          <ul class="benefits-list">
-            <li><i data-lucide="check"></i> Fast &amp; streamlined hiring</li>
-            <li><i data-lucide="check"></i> Competitive salary + accommodation</li>
-            <li><i data-lucide="check"></i> Full relocation assistance</li>
-            <li><i data-lucide="check"></i> QCHP guidance &amp; preparation</li>
-            <li><i data-lucide="check"></i> Safe professional environment</li>
-          </ul>
+          <div class="destination-body">
+            <h3>Qatar</h3>
+            <p class="salary"><i data-lucide="banknote"></i> 7,000 - 12,000 QAR / month</p>
+            <ul class="destination-highlights">
+              <li><i data-lucide="check"></i> QCHP Licensing Support</li>
+              <li><i data-lucide="check"></i> Competitive Allowances</li>
+              <li><i data-lucide="check"></i> Rapid Hiring Process</li>
+            </ul>
+            <a href="nursing-jobs.html" class="btn btn-gold w-100" style="width:100%; justify-content:center;">View Details</a>
+          </div>
         </div>
 
         <!-- Australia -->
-        <div class="country-card fade-up delay-2 glass-dark">
-          <div class="country-card-header glass-dark">
-            <span class="country-flag"><i data-lucide="map-pin"></i></span>
-            <div>
-              <h3>Australia</h3>
-              <p class="subtitle">Hospitals &amp; Aged Care</p>
+        <div class="destination-card reveal delay-2 hover-shine">
+          <div class="destination-img">
+            <img src="assets/img/australia_healthcare.png" alt="Healthcare in Australia">
+            <div class="destination-badges">
+              <span class="badge-gold">PR Pathway</span>
+              <span class="badge-demand">Critical Need</span>
             </div>
           </div>
-          <div class="license-tag"><i data-lucide="certificate"></i> AHPRA Registration</div>
-          <ul class="benefits-list">
-            <li><i data-lucide="check"></i> World-class salary packages</li>
-            <li><i data-lucide="check"></i> Clear PR pathway available</li>
-            <li><i data-lucide="check"></i> IELTS / OET support</li>
-            <li><i data-lucide="check"></i> Excellent work-life balance</li>
-            <li><i data-lucide="check"></i> Long-term career growth</li>
-          </ul>
+          <div class="destination-body">
+            <h3>Australia</h3>
+            <p class="salary"><i data-lucide="banknote"></i> $70,000 - $90,000 AUD / year</p>
+            <ul class="destination-highlights">
+              <li><i data-lucide="check"></i> AHPRA Registration</li>
+              <li><i data-lucide="check"></i> Permanent Residency Path</li>
+              <li><i data-lucide="check"></i> World-Class Lifestyle</li>
+            </ul>
+            <a href="nursing-jobs.html" class="btn btn-gold w-100" style="width:100%; justify-content:center;">View Details</a>
+          </div>
         </div>
 
         <!-- Germany -->
-        <div class="country-card fade-up delay-3 glass-dark">
-          <div class="country-card-header glass-dark">
-            <span class="country-flag"><i data-lucide="map-pin"></i></span>
-            <div>
-              <h3>Germany</h3>
-              <p class="subtitle">Clinics &amp; Care Facilities</p>
+        <div class="destination-card reveal delay-3 hover-shine">
+          <div class="destination-img">
+            <img src="assets/img/germany_healthcare.png" alt="Healthcare in Germany">
+            <div class="destination-badges">
+              <span class="badge-gold">Free Language</span>
+              <span class="badge-demand">High Demand</span>
             </div>
           </div>
-          <div class="license-tag"><i data-lucide="certificate"></i> Approbation License</div>
-          <ul class="benefits-list">
-            <li><i data-lucide="check"></i> Structured career pathway</li>
-            <li><i data-lucide="check"></i> Language training included (A2–B2)</li>
-            <li><i data-lucide="check"></i> EU employment rights</li>
-            <li><i data-lucide="check"></i> Employer-sponsored relocation</li>
-            <li><i data-lucide="check"></i> Affordable entry pathway</li>
-          </ul>
+          <div class="destination-body">
+            <h3>Germany</h3>
+            <p class="salary"><i data-lucide="banknote"></i> €2,800 - €4,200 / month</p>
+            <ul class="destination-highlights">
+              <li><i data-lucide="check"></i> Language Training A1-B2</li>
+              <li><i data-lucide="check"></i> EU Employment Rights</li>
+              <li><i data-lucide="check"></i> Paid Apprenticeships</li>
+            </ul>
+            <a href="nursing-jobs.html" class="btn btn-gold w-100" style="width:100%; justify-content:center;">View Details</a>
+          </div>
         </div>
 
         <!-- Georgia -->
-        <div class="country-card fade-up delay-4 glass-dark">
-          <div class="country-card-header glass-dark">
-            <span class="country-flag"><i data-lucide="map-pin"></i></span>
-            <div>
-              <h3>Georgia</h3>
-              <p class="subtitle">Hospitals &amp; Private Clinics</p>
+        <div class="destination-card reveal delay-4 hover-shine">
+          <div class="destination-img">
+            <img src="assets/img/georgia_healthcare.png" alt="Healthcare in Georgia">
+            <div class="destination-badges">
+              <span class="badge-gold">Entry Level</span>
+              <span class="badge-demand">Moderate</span>
             </div>
           </div>
-          <div class="license-tag"><i data-lucide="certificate"></i> Ministry of Health</div>
-          <ul class="benefits-list">
-            <li><i data-lucide="check"></i> Beginner-friendly entry</li>
-            <li><i data-lucide="check"></i> Quick visa processing</li>
-            <li><i data-lucide="check"></i> Affordable setup costs</li>
-            <li><i data-lucide="check"></i> Gateway to EU destinations</li>
-            <li><i data-lucide="check"></i> Safe work environment</li>
-          </ul>
+          <div class="destination-body">
+            <h3>Georgia</h3>
+            <p class="salary"><i data-lucide="banknote"></i> Competitive Local Salary</p>
+            <ul class="destination-highlights">
+              <li><i data-lucide="check"></i> Fast Visa Processing</li>
+              <li><i data-lucide="check"></i> Ideal for Beginners</li>
+              <li><i data-lucide="check"></i> Gateway to EU Market</li>
+            </ul>
+            <a href="nursing-jobs.html" class="btn btn-gold w-100" style="width:100%; justify-content:center;">View Details</a>
+          </div>
         </div>
 
       </div>
@@ -289,6 +320,35 @@
     </div>
   </section>
 
+  <!-- OTHER OPPORTUNITIES SECTION -->
+  <section class="section section-offwhite" id="jobs-now">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label reveal">Now Hiring</span>
+        <h2 class="reveal delay-1">RTA Taxi Driver Jobs in Dubai</h2>
+        <div class="divider-gold reveal delay-2"></div>
+        <p class="reveal delay-2">Start your professional driving career in Dubai with high earning potential and full company support.</p>
+      </div>
+
+      <div class="country-feature-box reveal hover-shine" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; max-width: 1000px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: 20px;">
+        <div style="border-radius: 12px; overflow: hidden; height: 300px; box-shadow: var(--shadow-lg);">
+          <img src="assets/img/rta_taxi_hero.png" alt="RTA Taxi Dubai" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="country-content" style="text-align: left;">
+          <h3 style="color: var(--black) !important;">Join the Dubai RTA Network</h3>
+          <p style="color: #444 !important; margin-bottom: 20px;">We are currently recruiting motivated drivers for RTA Taxi roles. Earn high commissions and enjoy multiple benefits including company vehicle and training.</p>
+          <ul class="benefits-list" style="margin-bottom: 25px;">
+            <li style="color: #222 !important;"><i data-lucide="check-circle" style="color: var(--gold);"></i> Company Vehicle Provided</li>
+            <li style="color: #222 !important;"><i data-lucide="check-circle" style="color: var(--gold);"></i> High Earning Potential</li>
+            <li style="color: #222 !important;"><i data-lucide="check-circle" style="color: var(--gold);"></i> RTA License Assistance</li>
+          </ul>
+          <a href="taxi-driver-jobs.html" class="btn btn-cta">Learn More & Apply</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- HOW IT WORKS -->
   <section class="section section-offwhite overflow-hidden">
     <div class="container">
@@ -298,38 +358,43 @@
         <div class="divider-gold reveal delay-2"></div>
         <p class="reveal delay-2">A clear, supported journey from your first contact to your first day on the job.</p>
       </div>
-      <div class="steps-grid">
-        <div class="step-item reveal">
-          <div class="step-num">1</div>
-          <div class="step-body">
+      <div class="roadmap-container">
+        <!-- Step 1 -->
+        <div class="roadmap-step reveal">
+          <div class="roadmap-num">1</div>
+          <div class="roadmap-content">
             <h4>Contact or Register</h4>
             <p>Share your profile, qualification, and preferred destination country.</p>
           </div>
         </div>
-        <div class="step-item reveal delay-1">
-          <div class="step-num">2</div>
-          <div class="step-body">
+        <!-- Step 2 -->
+        <div class="roadmap-step reveal delay-1">
+          <div class="roadmap-num">2</div>
+          <div class="roadmap-content">
             <h4>Profile Evaluation</h4>
             <p>Our team reviews your background and recommends the best-fit opportunity.</p>
           </div>
         </div>
-        <div class="step-item reveal delay-2">
-          <div class="step-num">3</div>
-          <div class="step-body">
+        <!-- Step 3 -->
+        <div class="roadmap-step reveal delay-2">
+          <div class="roadmap-num">3</div>
+          <div class="roadmap-content">
             <h4>Documentation &amp; Licensing</h4>
             <p>We guide you through all required paperwork and exam preparation.</p>
           </div>
         </div>
-        <div class="step-item reveal delay-3">
-          <div class="step-num">4</div>
-          <div class="step-body">
+        <!-- Step 4 -->
+        <div class="roadmap-step reveal delay-3">
+          <div class="roadmap-num">4</div>
+          <div class="roadmap-content">
             <h4>Interview &amp; Selection</h4>
             <p>We prepare and coach you, then coordinate your interview with employers.</p>
           </div>
         </div>
-        <div class="step-item reveal delay-4">
-          <div class="step-num">5</div>
-          <div class="step-body">
+        <!-- Step 5 -->
+        <div class="roadmap-step reveal delay-4">
+          <div class="roadmap-num">5</div>
+          <div class="roadmap-content">
             <h4>Visa Processing &amp; Placement</h4>
             <p>We support your visa, travel, onboarding, and everything in between.</p>
           </div>
@@ -338,66 +403,64 @@
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- DATA & AUTHORITY SECTION -->
   <section class="section">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-label reveal">The IBREU Edge</span>
-        <h2 class="reveal delay-1">Why Healthcare Professionals Choose Us</h2>
+        <span class="section-label reveal">Market Insights</span>
+        <h2 class="reveal delay-1">Global Healthcare Demand</h2>
         <div class="divider-gold reveal delay-2"></div>
+        <p class="reveal delay-2">The international demand for skilled nurses is at an all-time high. We help you navigate this growing market.</p>
       </div>
-      <div class="cards-grid">
-        <div class="service-card reveal glass-light" style="padding:40px;">
-           <div class="service-icon-wrap" style="background:var(--grad-gold);color:var(--black);"><i data-lucide="shield-check"></i></div>
-           <h3>Verified Partners</h3>
-           <p>We only work with accredited healthcare institutions and hospitals to ensure your safety and career stability.</p>
+      <div class="chart-card reveal">
+        <div class="chart-header">
+          <h4>Healthcare Placement Growth Trend</h4>
         </div>
-        <div class="service-card reveal delay-1 glass-light" style="padding:40px;">
-           <div class="service-icon-wrap" style="background:var(--grad-gold);color:var(--black);"><i data-lucide="handshake"></i></div>
-           <h3>Personalized Coaching</h3>
-           <p>Our experts provide one-on-one sessions for interview prep and licensing exams, increasing your success rate.</p>
-        </div>
-        <div class="service-card reveal delay-2 glass-light" style="padding:40px;">
-           <div class="service-icon-wrap" style="background:var(--grad-gold);color:var(--black);"><i data-lucide="sparkles"></i></div>
-           <h3>Transparent Fees</h3>
-           <p>No hidden costs. We provide a clear breakdown of all expenses and processing times from day one.</p>
+        <div class="chart-container">
+          <canvas id="demandChart"></canvas>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CANDIDATE + EMPLOYER SPLIT -->
-  <section class="section">
+  <!-- TESTIMONIALS SECTION -->
+  <section class="section section-offwhite">
     <div class="container">
-      <div class="split-layout reveal">
-        <div class="split-content">
-          <div class="candidate-img-wrap mb-4">
-            <img src="assets/img/candidate-img.png" alt="Professional Healthcare Candidate">
+      <div class="section-header text-center">
+        <span class="section-label reveal">Success Stories</span>
+        <h2 class="reveal delay-1">What Our Candidates Say</h2>
+        <div class="divider-gold reveal delay-2"></div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <i data-lucide="quote" class="quote-icon"></i>
+          <p class="feedback">"IBREU Global Talent made my dream of working in the UAE a reality. The licensing process was smooth and the support was exceptional."</p>
+          <div class="testimonial-user">
+            <div class="info">
+              <h4>Sarah Johnson</h4>
+              <span>Placed in Dubai, UAE</span>
+            </div>
           </div>
-          <span class="section-label">For Candidates</span>
-          <h2>Start Your International Career Today</h2>
-          <div class="divider-gold divider-gold-left"></div>
-          <p>Whether you are a recent nursing graduate or an experienced healthcare professional seeking international opportunities, IBREU Global Talent provides the guidance, support, and connections you need.</p>
-          <ul class="check-list">
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Job opportunity guidance &amp; matching</li>
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Career direction &amp; planning</li>
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Interview preparation coaching</li>
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Documentation &amp; licensing support</li>
-          </ul>
-          <a href="candidates.html" class="btn btn-cta"><i data-lucide="heart-pulse"></i> For Candidates</a>
         </div>
-        <div class="split-content">
-          <span class="section-label">For Employers</span>
-          <h2>Hire Skilled Healthcare Professionals</h2>
-          <div class="divider-gold divider-gold-left"></div>
-          <p>We connect hospitals, clinics, and healthcare institutions with pre-screened, qualified, and job-ready professionals. Our recruitment process is designed for speed, reliability, and long-term fit.</p>
-          <ul class="check-list">
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Pre-screened candidate profiles</li>
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Fast &amp; reliable recruitment</li>
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Workforce planning support</li>
-            <li><i data-lucide="check-circle" stroke-width="2.5"></i> Long-term hiring partnerships</li>
-          </ul>
-          <a href="employers.html" class="btn btn-gold"><i data-lucide="building"></i> For Employers</a>
+        <div class="testimonial-card reveal delay-1">
+          <i data-lucide="quote" class="quote-icon"></i>
+          <p class="feedback">"Highly professional and transparent. They guided me through every step of the Australian registration process."</p>
+          <div class="testimonial-user">
+            <div class="info">
+              <h4>David Chen</h4>
+              <span>Placed in Sydney, Australia</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal delay-2">
+          <i data-lucide="quote" class="quote-icon"></i>
+          <p class="feedback">"The training programs are excellent. I felt fully prepared for my interviews and international transition."</p>
+          <div class="testimonial-user">
+            <div class="info">
+              <h4>Maria Gonzalez</h4>
+              <span>Placed in Berlin, Germany</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -429,25 +492,32 @@
   <div class="footer-body">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
+        <div class="footer-brand reveal">
           <div class="footer-logo">IBREU Global Talent</div>
           <div class="footer-tagline">Inspiring Potential Worldwide</div>
-          <p>UAE-based global recruitment and healthcare consultancy connecting skilled professionals to international career opportunities.</p>
+          <p>UAE-based global recruitment and healthcare consultancy connecting skilled professionals to international career opportunities across UAE, Qatar, Australia, Germany, and beyond.</p>
+          <div class="footer-socials" style="margin-top:20px; display:flex; gap:15px;">
+             <a href="#" style="color:var(--gold);"><i data-lucide="facebook"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="instagram"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="linkedin"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="twitter"></i></a>
+          </div>
         </div>
-        <div class="footer-col">
+        <div class="footer-col reveal delay-1">
           <h5>Quick Links</h5>
           <ul>
-            <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Home</a></li>
-            <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> About Us</a></li>
-            <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Services</a></li>
-            <li><a href="nursing-jobs.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Nursing Jobs</a></li>
-            <li><a href="candidates.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> For Candidates</a></li>
-            <li><a href="employers.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> For Employers</a></li>
-            <li><a href="training.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Training</a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="nursing-jobs.html">Nursing Jobs</a></li>
+            <li><a href="taxi-driver-jobs.html">Taxi Driver Jobs</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-col reveal delay-2">
           <h5>Destinations</h5>
           <ul>
             <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> UAE</a></li>
@@ -457,11 +527,11 @@
             <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Georgia</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="footer-col reveal delay-3">
           <h5>Contact Us</h5>
           <div class="footer-contact-item">
             <i data-lucide="message-circle" stroke-width="2.5"></i>
-            <span><a href="https://wa.me/971527171134" target="_blank">+971 52 717 1134</a><br><small style="color:rgba(255,255,255,0.3);">WhatsApp Available</small></span>
+            <span><a href="https://wa.me/971527171134" target="_blank">+971 52 717 1134</a><br><small style="color:rgba(255,255,255,0.4);">WhatsApp Available 24/7</small></span>
           </div>
           <div class="footer-contact-item">
             <i data-lucide="mail"></i>
@@ -469,15 +539,20 @@
           </div>
           <div class="footer-contact-item">
             <i data-lucide="map-pin"></i>
-            <span>UAE — United Arab Emirates</span>
+            <span>Business Center, UAE<br><small style="color:rgba(255,255,255,0.4);">United Arab Emirates</small></span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="footer-bottom container">
-    <span>&copy; 2025 IBREU Global Talent. All rights reserved.</span>
-    <span>Global Recruitment &middot; Healthcare Staffing &middot; Career Development</span>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+      <span>&copy; 2025 IBREU Global Talent. All rights reserved.</span>
+      <div class="footer-legal" style="display:flex; gap:20px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
   </div>
 </footer>
 
