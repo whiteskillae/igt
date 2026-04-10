@@ -455,6 +455,37 @@ body:not(.js-active) .fade-up {
     margin-bottom: 0;
 }
 
+.floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: var(--transition-slow);
+    color: white;
+    text-decoration: none;
+    animation: bounceIn 0.8s ease backwards 1s, waPulse 2s infinite;
+}
+
+.floating-wa:hover {
+    transform: scale(1.15) rotate(10deg);
+    background: #1EBE5D;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes waPulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(37,211,102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+}
+
 .roadmap-num {
     width: 44px;
     height: 44px;
@@ -775,7 +806,7 @@ p{
 }
 
 /* mobile handling for dropdown in main js if needed, but for now simple hover */
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
     .nav-dropdown .dropdown-content {
         position: static;
         width: 100%;
@@ -946,4 +977,150 @@ textarea.form-control {
     font-size: 1rem;
     margin-top: 15px;
     justify-content: center;
+}
+
+/* ================================================================
+   FAQ ACCORDION 
+   ================================================================ */
+.faq-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.faq-item {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+.section-dark .faq-item {
+    background: rgba(30, 30, 30, 0.6);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+.faq-item.active {
+    border-color: var(--gold);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+}
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 24px;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--black);
+    transition: var(--transition);
+}
+.section-dark .faq-question {
+    color: var(--white);
+}
+.faq-question:hover {
+    color: var(--gold);
+}
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+    flex-shrink: 0;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+    background: var(--gold);
+    color: var(--black);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+.faq-answer-inner {
+    padding: 0 24px 24px;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+.section-dark .faq-answer-inner {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ================================================================
+   SWIPER CAROUSEL (TESTIMONIALS)
+   ================================================================ */
+.swiper-pagination-bullet {
+    background: #bbb !important;
+    opacity: 0.5 !important;
+    transition: all 0.3s ease !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+.swiper-pagination-bullet-active {
+    background: var(--gold) !important;
+    opacity: 1 !important;
+    width: 24px !important;
+    border-radius: 5px !important;
+}
+.testimonial-swiper-wrap {
+    padding-bottom: 50px; /* space for pagination */
+    overflow: hidden;
+}
+
+/* CHART TOGGLE BUTTONS */
+.chart-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 32px 0 24px;
+}
+
+.chart-tab-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-fast);
+}
+
+.chart-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.chart-tab-btn.active {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+.chart-tab-btn svg {
+    transition: all var(--transition-fast);
+}
+
+.chart-tab-btn.active svg {
+    stroke: var(--gold);
 }

@@ -193,82 +193,331 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* -----------------------------------------------------------
-     7. COUNTER ANIMATION for hero stats
+     7. COUNTER ANIMATION — bulletproof trigger
   ----------------------------------------------------------- */
-  function animateCounter(el, target, suffix = '') {
-    const duration = 1800;
+  function animateCounter(el, target, suffix) {
+    if (el.dataset.animated) return; // prevent double-run
+    el.dataset.animated = 'true';
+    const duration = 2200;
     const start    = performance.now();
-    const startVal = 0;
+    el.textContent = '0' + suffix;
 
     function update(now) {
       const elapsed  = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      const current  = Math.floor(startVal + (target - startVal) * eased);
-      el.textContent = current + suffix;
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      const current  = Math.floor(target * eased);
+      el.textContent = current.toLocaleString() + suffix;
       if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
   }
 
-  const counters = document.querySelectorAll('[data-count]');
-  if (counters.length > 0 && 'IntersectionObserver' in window) {
-    const cObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el     = entry.target;
-          const target = parseInt(el.dataset.count, 10);
-          const suffix = el.dataset.suffix || '';
-          animateCounter(el, target, suffix);
-          cObs.unobserve(el);
+  function tryRunCounters() {
+    document.querySelectorAll('[data-count]').forEach(el => {
+      if (!el.dataset.animated) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          animateCounter(el, parseInt(el.dataset.count, 10), el.dataset.suffix || '');
         }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(c => cObs.observe(c));
+      }
+    });
   }
 
+  // Run on scroll with throttle
+  let counterThrottle = false;
+  window.addEventListener('scroll', () => {
+    if (!counterThrottle) {
+      counterThrottle = true;
+      requestAnimationFrame(() => {
+        tryRunCounters();
+        counterThrottle = false;
+      });
+    }
+  }, { passive: true });
+
+  // Also run after a delay for stat boxes visible on page load
+  setTimeout(tryRunCounters, 600);
+  setTimeout(tryRunCounters, 1500);
+
   /* -----------------------------------------------------------
-     8. CHART.JS INITIALIZATION
+     8. TABBED PLACEMENT CHART INITIALIZATION
   ------------------------------------------- */
-  const ctx = document.getElementById('demandChart');
-  if (ctx) {
-    new Chart(ctx, {
+  const placementCtx = document.getElementById('placementChart');
+  let placementChart;
+
+  const chartData = {
+    nursing: {
+      labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+      dataset: [85, 92, 105, 115, 128, 142]
+    },
+    taxi: {
+      labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+      dataset: [150, 180, 210, 260, 305, 340]
+    }
+  };
+
+  if (placementCtx && typeof Chart !== 'undefined') {
+    placementChart = new Chart(placementCtx, {
       type: 'line',
       data: {
-        labels: ['2020', '2021', '2022', '2023', '2024', '2025 (Prop)'],
+        labels: chartData.nursing.labels,
         datasets: [{
-          label: 'Global Nursing Demand Index',
-          data: [65, 72, 85, 92, 98, 105],
+          label: 'Monthly Placements',
+          data: chartData.nursing.dataset,
           borderColor: '#D4AF37',
           backgroundColor: 'rgba(212, 175, 55, 0.1)',
           fill: true,
           tension: 0.4,
-          borderWidth: 3,
-          pointBackgroundColor: '#D4AF37'
+          borderWidth: 4,
+          pointBackgroundColor: '#D4AF37',
+          pointRadius: 6,
+          pointHoverRadius: 8
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: {
-            display: false
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            titleColor: '#000000',
+            bodyColor: '#333333',
+            borderColor: '#D4AF37',
+            borderWidth: 2,
+            padding: 12,
+            displayColors: false,
+            callbacks: {
+              label: function(context) {
+                return context.parsed.y + ' Placements';
+              }
+            }
           }
         },
         scales: {
           y: {
             beginAtZero: true,
-            grid: { color: 'rgba(0,0,0,0.05)' },
-            ticks: { color: '#888' }
+            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+            border: { display: false },
+            ticks: { color: '#333333', font: { size: 13, family: 'Inter', weight: 'bold' } }
           },
           x: {
             grid: { display: false },
-            ticks: { color: '#888' }
+            border: { display: false },
+            ticks: { color: '#333333', font: { size: 13, family: 'Inter', weight: 'bold' } }
           }
         }
       }
     });
+
+    // Make switchChart global so the buttons can call it
+    window.switchChart = function(type) {
+      if (!placementChart) return;
+      
+      // Update active tab styling
+      document.querySelectorAll('.chart-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('tab-' + type).classList.add('active');
+
+      // Update data
+      placementChart.data.labels = chartData[type].labels;
+      placementChart.data.datasets[0].data = chartData[type].dataset;
+      placementChart.update();
+    };
   }
+
+  /* -----------------------------------------------------------
+     10. FAQ ACCORDION LOGIC
+  ------------------------------------------- */
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isActive = item.classList.contains('active');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+        if (activeItem !== item) {
+          activeItem.classList.remove('active');
+          activeItem.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+
+      if (isActive) {
+        item.classList.remove('active');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+
+  /* -----------------------------------------------------------
+     11. SWIPER CAROUSEL (TESTIMONIALS)
+  ------------------------------------------- */
+  if (typeof Swiper !== 'undefined' && document.querySelector('.testimonial-swiper')) {
+    new Swiper('.testimonial-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  }
+
+  /* -----------------------------------------------------------
+     12. GLOBAL FORM SUBMISSION (Web3Forms) & RATE LIMITING
+  ------------------------------------------- */
+  const WEB3_ACCESS_KEY = "8394a489-db33-4496-8ff0-911ea5268d2a";
+  const WA_NUMBER = "+971527171134";
+
+  function showFormMessage(type, title, message, waData = null) {
+    let toastEl = document.getElementById('form-status-toast');
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.id = 'form-status-toast';
+      toastEl.className = 'toast-success';
+      document.body.appendChild(toastEl);
+    }
+    
+    let icon = type === 'success' ? 'check-circle' : (type === 'limit' ? 'clock' : 'alert-circle');
+    let color = type === 'success' ? '#D4AF37' : (type === 'limit' ? '#3b82f6' : '#ef4444');
+    let waButtonHTML = '';
+    
+    // Auto-show WhatsApp button if it's an error or if data exists
+    if (waData || type === 'error') {
+      let text = "Hi IBREU Team, I have an inquiry:\n" + (waData || "");
+      let waLink = `https://wa.me/${WA_NUMBER.replace('+', '')}?text=${encodeURIComponent(text)}`;
+      waButtonHTML = `<a href="${waLink}" target="_blank" style="display:inline-flex; align-items:center; gap:8px; margin-top:10px; background:#25D366; color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-size:0.9rem; font-weight:600; font-family:var(--font-body); box-shadow:0 4px 12px rgba(37,211,102,0.3);"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.996 0c-6.627 0-12 5.373-12 12 0 2.112.548 4.103 1.517 5.845l-1.517 6.155 6.291-1.65c1.722.9 3.655 1.397 5.709 1.397 6.627 0 12-5.373 12-12s-5.373-12-12-12zm-4.464 7.202c.224-.045.45-.045.672-.045.334 0 .684.09.967.433.284.341.874 1.137.967 1.332.09.195.15.422.045.684s-.225.433-.375.617c-.15.185-.315.39-.45.541-.15.15-.315.315-.15.615.165.3.705 1.196 1.516 1.921.998.885 1.876 1.155 2.176 1.305.3.15.48.15.675 0s.54-.615.69-.825.315-.195.585-.09c.27.105 1.696.825 1.981.975.285.15.48.225.555.36s.075.645-.21 1.23c-.285.585-1.696 1.125-2.326 1.17s-1.276.045-3.056-.54c-1.78-.585-3.921-2.43-5.266-4.08-1.344-1.65-2.025-3.414-1.95-5.221C6.46 9.176 7.256 8.351 7.532 7.202z"/></svg> Send via WhatsApp</a>`;
+    }
+
+    toastEl.innerHTML = `
+      <i data-lucide="${icon}" style="color:${color}"></i>
+      <div style="flex:1;">
+        <strong style="color:${color}">${title}</strong>
+        <p style="color:#fff;">${message}</p>
+        ${waButtonHTML}
+      </div>
+      <button onclick="this.parentElement.classList.remove('show')"><i data-lucide="x"></i></button>
+    `;
+    
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    
+    toastEl.style.borderLeftColor = color;
+    toastEl.classList.add('show');
+    
+    // Auto hide success/limit after 6s, keep error visible
+    if (type !== 'error') {
+      setTimeout(() => toastEl.classList.remove('show'), 6000);
+    }
+  }
+
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const today = new Date().toDateString(); // More robust than toLocaleDateString()
+      let storage = JSON.parse(localStorage.getItem('igt_submissions')) || { date: today, count: 0 };
+      
+      if (storage.date !== today) {
+        storage = { date: today, count: 0 };
+      }
+      
+      if (storage.count >= 3) {
+        showFormMessage('limit', 'Daily Limit Reached', 'You can send up to 3 inquiries per day. Please wait until tomorrow or contact us via WhatsApp.');
+        return;
+      }
+      
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // 1. DATA COLLECTION
+      const formData = new FormData(form);
+      const formObject = {};
+      let fullMessageSummary = "";
+
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+        // Build a readable summary for email body & WhatsApp fallback
+        if (key !== 'access_key' && key !== 'subject') {
+          fullMessageSummary += `${key.toUpperCase()}: ${value}\n`;
+        }
+      });
+
+      // 2. MOBILE VALIDATION (Ensure digits after country code)
+      const phoneInput = form.querySelector('input[type="tel"]');
+      if (phoneInput && phoneInput.value) {
+        const digitsOnly = phoneInput.value.replace(/\D/g, '');
+        if (digitsOnly.length < 7) {
+          showFormMessage('limit', 'Invalid Phone', 'Please enter a valid mobile number.');
+          return;
+        }
+      }
+
+      // 3. TEXT LENGTH LIMIT (Safety check)
+      const textarea = form.querySelector('textarea');
+      if (textarea && textarea.value.length > 2000) {
+        showFormMessage('limit', 'Message Too Long', 'Please shorten your message below 2000 characters.');
+        return;
+      }
+
+      // Append required API fields
+      formObject.access_key = WEB3_ACCESS_KEY;
+      formObject.subject = `New Web Inquiry from ${formObject.name || 'Lead'}`;
+      formObject.from_name = "IBREU Global Talent Portal";
+      // Inject the summary into the message field so Web3Forms shows it clearly
+      formObject.message = fullMessageSummary;
+
+      const btn = form.querySelector('button[type="submit"]');
+      const ogBtnText = btn ? btn.innerHTML : "Submit";
+      if (btn) {
+        btn.innerHTML = '<span class="loading-spinner"></span> Sending...';
+        btn.disabled = true;
+      }
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(formObject)
+        });
+        
+        const data = await response.json();
+
+        if (data.success) {
+          storage.count++;
+          localStorage.setItem('igt_submissions', JSON.stringify(storage));
+          showFormMessage('success', 'Sent Successfully!', 'Your inquiry has been received. Our team will contact you shortly.');
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (error) {
+        console.error("Submission Error:", error);
+        showFormMessage('error', 'Internal Issue', 'There was a technical problem. Please send your data via WhatsApp instead.', fullMessageSummary);
+      } finally {
+        if (btn) {
+          btn.innerHTML = ogBtnText;
+          btn.disabled = false;
+        }
+      }
+    });
+  });
+
 });
 
 

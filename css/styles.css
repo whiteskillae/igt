@@ -93,8 +93,18 @@ h4 { font-size: clamp(1.05rem, 1.8vw, 1.25rem); font-weight: 600; font-family: v
 .page-hero h2          { color: var(--white); }
 .section-offwhite h2   { color: var(--black); }
 
-p { color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
-.section-offwhite p { color: var(--text-body); }
+/* Base paragraph — dark text by default (light/white backgrounds) */
+p { color: var(--text-body); margin-bottom: 1rem; }
+
+/* Dark sections override: light text */
+.section-dark p,
+.hero p,
+.page-hero p,
+.footer p { color: rgba(255,255,255,0.7); }
+
+/* Offwhite / light sections: clearly dark text */
+.section-offwhite p,
+.section-light p  { color: var(--text-body); }
 
 /* ---- CONTAINER ---- */
 .container {
@@ -1123,7 +1133,7 @@ select.form-control {
 }
 
 .contact-info-box h2 { color: var(--gold); margin-bottom: 8px; }
-.contact-info-box > p { color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+.contact-info-box > p { color: rgba(255,255,255,0.9); margin-bottom: 32px; }
 
 .contact-item {
   display: flex;
@@ -1146,7 +1156,7 @@ select.form-control {
 
 .contact-item h4 { color: var(--white); font-size: 0.85rem; margin-bottom: 4px; }
 .contact-item a,
-.contact-item p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0; transition: var(--transition); }
+.contact-item p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin: 0; transition: var(--transition); }
 .contact-item a:hover { color: var(--gold); }
 
 .wa-cta-box {
@@ -1373,6 +1383,11 @@ select.form-control {
 @media (max-width: 1024px) {
   :root { --section-pad: 72px; }
 
+  /* Navbar tablet fix */
+  .nav-links { display: none; }
+  .nav-actions .btn { display: none; }
+  .hamburger { display: flex; }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1451,34 +1466,97 @@ select.form-control {
 
 .stat-box {
   text-align: center;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  padding: 36px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.15);
   border-radius: var(--radius-lg);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212,175,55,0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.stat-box:hover::before { opacity: 1; }
+
+.stat-box:hover {
+  background: rgba(212, 175, 55, 0.06);
+  border-color: var(--gold);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(212,175,55,0.1);
+}
+
+.stat-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--gold);
   transition: var(--transition);
 }
 
-.stat-box:hover {
-  background: rgba(212, 175, 55, 0.05);
-  border-color: var(--gold);
-  transform: translateY(-5px);
+.stat-box:hover .stat-icon-wrap {
+  background: var(--gold);
+  color: var(--black);
+  transform: scale(1.1) rotate(5deg);
 }
 
 .stat-box .count {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  color: var(--gold);
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1;
   display: block;
+  margin-bottom: 8px;
 }
 
 .stat-box .label {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.5);
-  margin-top: 10px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+  display: block;
+}
+
+/* Chart Card (Taxi page) */
+.chart-card {
+  background: #ffffff;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-top: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.chart-header {
+  margin-bottom: 20px;
+}
+
+.chart-header h4 {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* 2. TESTIMONIALS SECTION */
