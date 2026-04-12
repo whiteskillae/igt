@@ -445,6 +445,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // 0. CAPTCHA VALIDATION
+      const hCaptcha = form.querySelector('[name="h-captcha-response"]')?.value;
+      if (!hCaptcha) {
+        showFormMessage('limit', 'Captcha Required', 'Please complete the "I am human" verification before submitting.');
+        return;
+      }
+
       // 1. DATA COLLECTION
       const formData = new FormData(form);
       const formObject = {};
