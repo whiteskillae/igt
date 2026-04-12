@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Training & Support | IBREU Global Talent</title>
-  <meta name="description" content="Prepare for global opportunities with the right training and licensing support. DHA, QCHP, AHPRA, Approbation, IELTS, OET — we guide you through it all.">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Training, Licensing & Support | DHA, OET, IELTS Guidance | IBREU</title>
+  <meta name="description" content="Comprehensive training and licensing support for global career migration. We guide healthcare and transport professionals through DHA, QCHP, AHPRA, IELTS, and technical permits.">
+  <meta name="keywords" content="DHA Licensing Support, IELTS Training for Nurses, OET Exam Prep, RTA Permit Assistance">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/premium.css">
@@ -14,19 +14,27 @@
 
 <nav class="navbar" id="navbar">
   <div class="container"><div class="nav-inner">
-    <a href="index.html" class="nav-logo"><span class="logo-icon">IGT</span><div><span class="logo-main">IBREU Global</span><span class="logo-sub">Inspiring Potential</span></div></a>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">IGT</span>
+    </a>
     <div class="nav-links" id="nav-links">
       <a href="index.html"><i data-lucide="home"></i> Home</a>
       <a href="about.html"><i data-lucide="info"></i> About</a>
       <a href="services.html"><i data-lucide="briefcase"></i> Services</a>
-      <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Jobs</a>
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-trigger"><i data-lucide="briefcase"></i> Jobs <i data-lucide="chevron-down" class="chevron"></i></a>
+        <div class="dropdown-content">
+          <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
+          <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
+        </div>
+      </div>
       <a href="candidates.html"><i data-lucide="user-round"></i> Candidates</a>
       <a href="employers.html"><i data-lucide="building"></i> Employers</a>
       <a href="training.html" class="active"><i data-lucide="graduation-cap"></i> Training</a>
       <a href="contact.html"><i data-lucide="mail"></i> Contact</a>
     </div>
     <div class="nav-actions">
-      <a href="nursing-jobs.html" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;"><i data-lucide="arrow-right"></i> Apply Now</a>
+      <a href="index.html#jobs-now" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;"><i data-lucide="briefcase"></i> Open Jobs</a>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </div></div>
@@ -34,11 +42,17 @@
 
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebar-header"><a href="index.html" class="nav-logo sidebar-logo"><span class="logo-main">IBREU</span><span class="logo-sub">Global Talent</span></a><button class="sidebar-close" id="sidebar-close"><i data-lucide="xmark"></i></button></div>
+  <div class="sidebar-header">
+    <a href="index.html" class="nav-logo sidebar-logo">
+      <span class="logo-icon" style="width:40px; height:40px; background:var(--grad-gold); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--black);">IGT</span>
+    </a>
+    <button class="sidebar-close" id="sidebar-close"><i data-lucide="x"></i></button>
+  </div>
   <nav class="sidebar-nav">
     <a href="index.html"><i data-lucide="home"></i> Home</a><a href="about.html"><i data-lucide="info"></i> About Us</a>
     <a href="services.html"><i data-lucide="briefcase"></i> Services</a><a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
-    <a href="candidates.html"><i data-lucide="heart-pulse"></i> For Candidates</a><a href="employers.html"><i data-lucide="building"></i> For Employers</a>
+    <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
+    <a href="candidates.html"><i data-lucide="activity"></i> For Candidates</a><a href="employers.html"><i data-lucide="building"></i> For Employers</a>
     <a href="training.html"><i data-lucide="graduation-cap"></i> Training</a><a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
   </nav>
   <div class="sidebar-footer">
@@ -68,9 +82,14 @@
       </div>
 
       <div class="cards-grid">
-        <div class="service-card reveal glass-light">
-          <div class="service-icon-wrap"><i data-lucide="certificate"></i></div>
+        <!-- Licensing Exam Prep -->
+        <div class="service-card reveal glass-light hover-shine">
+          <div class="service-icon-wrap"><i data-lucide="award"></i></div>
           <h3>Licensing Exam Preparation</h3>
+          <div class="card-meta">
+            <span><i data-lucide="clock"></i> 4-8 Weeks</span>
+            <span><i data-lucide="check-circle"></i> License</span>
+          </div>
           <p>Comprehensive guidance and resources for licensing exams across all five destination countries.</p>
           <ul class="service-list">
             <li><i data-lucide="check"></i> DHA, DOH, HAAD, MOH — UAE</li>
@@ -79,9 +98,15 @@
             <li><i data-lucide="check"></i> Approbation — Germany</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-1 glass-light">
-          <div class="service-icon-wrap"><i data-lucide="file-shield"></i></div>
+
+        <!-- Dataflow Verification -->
+        <div class="service-card reveal delay-1 glass-light hover-shine">
+          <div class="service-icon-wrap"><i data-lucide="shield-check"></i></div>
           <h3>Dataflow Verification</h3>
+          <div class="card-meta">
+            <span><i data-lucide="clock"></i> 2-4 Weeks</span>
+            <span><i data-lucide="check-circle"></i> Verified</span>
+          </div>
           <p>Support in understanding and completing the Dataflow background screening process required for Gulf placements.</p>
           <ul class="service-list">
             <li><i data-lucide="check"></i> Step-by-step guidance</li>
@@ -89,9 +114,15 @@
             <li><i data-lucide="check"></i> Application review</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-2 glass-light">
-          <div class="service-icon-wrap"><i data-lucide="message-square"></i></div>
+
+        <!-- Communication Skills -->
+        <div class="service-card reveal delay-2 glass-light hover-shine">
+          <div class="service-icon-wrap"><i data-lucide="message-circle"></i></div>
           <h3>Communication Skills</h3>
+          <div class="card-meta">
+            <span><i data-lucide="clock"></i> 2 Weeks</span>
+            <span><i data-lucide="check-circle"></i> Skill Up</span>
+          </div>
           <p>Practical coaching on professional communication, medical English, and employer presentation skills.</p>
           <ul class="service-list">
             <li><i data-lucide="check"></i> Mock interview sessions</li>
@@ -99,9 +130,15 @@
             <li><i data-lucide="check"></i> Presentation coaching</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-3 glass-light">
-          <div class="service-icon-wrap"><i data-lucide="map-signs"></i></div>
+
+        <!-- Career Readiness -->
+        <div class="service-card reveal delay-3 glass-light hover-shine">
+          <div class="service-icon-wrap"><i data-lucide="map-pin"></i></div>
           <h3>Career Readiness</h3>
+          <div class="card-meta">
+            <span><i data-lucide="clock"></i> Ongoing</span>
+            <span><i data-lucide="check-circle"></i> Strategy</span>
+          </div>
           <p>Career planning sessions to help candidates identify the right path and prepare for the international transition.</p>
           <ul class="service-list">
             <li><i data-lucide="check"></i> Career goal setting</li>
@@ -109,9 +146,15 @@
             <li><i data-lucide="check"></i> Transition preparation</li>
           </ul>
         </div>
-        <div class="service-card reveal glass-light">
-          <div class="service-icon-wrap"><i data-lucide="languages"></i></div>
+
+        <!-- Language Training -->
+        <div class="service-card reveal glass-light hover-shine">
+          <div class="service-icon-wrap"><i data-lucide="book-open"></i></div>
           <h3>Language Training</h3>
+          <div class="card-meta">
+            <span><i data-lucide="clock"></i> 3-6 Months</span>
+            <span><i data-lucide="check-circle"></i> B2 Level</span>
+          </div>
           <p>Information on German language courses (A2 to B2 level) and English proficiency (IELTS/OET).</p>
           <ul class="service-list">
             <li><i data-lucide="check"></i> German A2 to B2 guidance</li>
@@ -119,9 +162,15 @@
             <li><i data-lucide="check"></i> Resource recommendations</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-1 glass-light">
-          <div class="service-icon-wrap"><i data-lucide="sparkles"></i></div>
+
+        <!-- Pre-Departure Support -->
+        <div class="service-card reveal delay-1 glass-light hover-shine">
+          <div class="service-icon-wrap"><i data-lucide="star"></i></div>
           <h3>Pre-Departure Support</h3>
+          <div class="card-meta">
+            <span><i data-lucide="clock"></i> 1 Week</span>
+            <span><i data-lucide="check-circle"></i> Ready</span>
+          </div>
           <p>Briefings and guidance for a successful relocation and first-day readiness at your work destination.</p>
           <ul class="service-list">
             <li><i data-lucide="check"></i> Travel & relocation help</li>
@@ -132,8 +181,6 @@
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- CTA -->
   <section class="section section-dark text-center">
@@ -153,29 +200,79 @@
 
 <footer class="footer">
   <div class="footer-top-border"></div>
-  <div class="footer-body"><div class="container"><div class="footer-grid">
-    <div class="footer-brand"><div class="footer-logo">IBREU Global Talent</div><div class="footer-tagline">Inspiring Potential Worldwide</div><p>UAE-based global recruitment connecting professionals to international opportunities.</p></div>
-    <div class="footer-col"><h5>Quick Links</h5><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="nursing-jobs.html">Nursing Jobs</a></li>
-      <li><a href="training.html" class="active">Training</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Destinations</h5><ul>
-      <li><a href="nursing-jobs.html">UAE</a></li><li><a href="nursing-jobs.html">Qatar</a></li>
-      <li><a href="nursing-jobs.html">Australia</a></li><li><a href="nursing-jobs.html">Germany</a></li>
-      <li><a href="nursing-jobs.html">Georgia</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Contact Us</h5>
-      <div class="footer-contact-item"><i data-lucide="message-circle" stroke-width="2.5"></i><span><a href="https://wa.me/971527171134">+971 52 717 1134</a></span></div>
-      <div class="footer-contact-item"><i data-lucide="mail"></i><span><a href="mailto:info@ibreuglobaltalent.com">info@ibreuglobaltalent.com</a></span></div>
+  <div class="footer-body">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <div class="footer-logo">IBREU Global Talent</div>
+          <div class="footer-tagline">Inspiring Potential Worldwide</div>
+          <p>UAE-based global recruitment and healthcare consultancy connecting skilled professionals to international career opportunities across UAE, Qatar, Australia, Germany, and beyond.</p>
+          <div class="footer-socials" style="margin-top:20px; display:flex; gap:15px;">
+             <a href="#" style="color:var(--gold);"><i data-lucide="facebook"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="instagram"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="linkedin"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col reveal delay-1">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="nursing-jobs.html">Nursing Jobs</a></li>
+            <li><a href="taxi-driver-jobs.html">Taxi Driver Jobs</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col reveal delay-2">
+          <h5>Destinations</h5>
+          <ul>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> UAE</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Qatar</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Australia</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Germany</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Georgia</a></li>
+          </ul>
+        </div>
+        <div class="footer-col reveal delay-3">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item">
+            <i data-lucide="message-circle" stroke-width="2.5"></i>
+            <span><a href="https://wa.me/971527171134" target="_blank">+971 52 717 1134</a><br><small style="color:rgba(255,255,255,0.4);">WhatsApp Available 24/7</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="mail"></i>
+            <span><a href="mailto:info@ibreuglobaltalent.com">info@ibreuglobaltalent.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="map-pin"></i>
+            <span>Business Center, UAE<br><small style="color:rgba(255,255,255,0.4);">United Arab Emirates</small></span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div></div></div>
-  <div class="footer-bottom container"><span>&copy; 2025 IBREU Global Talent. All rights reserved.</span></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+      <span>&copy; 2025 IBREU Global Talent. All rights reserved.</span>
+      <div class="footer-legal" style="display:flex; gap:20px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<a href="https://wa.me/971527171134" class="floating-wa" target="_blank"><i data-lucide="message-circle" stroke-width="2.5"></i></a>
+<a href="https://wa.me/971527171134" class="floating-wa" target="_blank" title="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M11.996 0c-6.627 0-12 5.373-12 12 0 2.112.548 4.103 1.517 5.845l-1.517 6.155 6.291-1.65c1.722.9 3.655 1.397 5.709 1.397 6.627 0 12-5.373 12-12s-5.373-12-12-12zm-4.464 7.202c.224-.045.45-.045.672-.045.334 0 .684.09.967.433.284.341.874 1.137.967 1.332.09.195.15.422.045.684s-.225.433-.375.617c-.15.185-.315.39-.45.541-.15.15-.315.315-.15.615.165.3.705 1.196 1.516 1.921.998.885 1.876 1.155 2.176 1.305.3.15.48.15.675 0s.54-.615.69-.825.315-.195.585-.09c.27.105 1.696.825 1.981.975.285.15.48.225.555.36s.075.645-.21 1.23c-.285.585-1.696 1.125-2.326 1.17s-1.276.045-3.056-.54c-1.78-.585-3.921-2.43-5.266-4.08-1.344-1.65-2.025-3.414-1.95-5.221C6.46 9.176 7.256 8.351 7.532 7.202z"/></svg>
+</a>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script src="js/main.js"></script>
 <script src="js/transitions.js"></script>
+<script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
 </body>
 </html>

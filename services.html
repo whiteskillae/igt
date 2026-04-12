@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services | IBREU Global Talent</title>
-  <meta name="description" content="Comprehensive recruitment and career support services. End-to-end support across recruitment, training, documentation, and career development.">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Our Services | International Recruitment & Career Support | IBREU</title>
+  <meta name="description" content="Explore our specialized services: Global Placement, Document Legalization, Licensing Support, and Career Training for healthcare and transport sectors.">
+  <meta name="keywords" content="Nurse Licensing Support, Document Attestation UAE, Global Healthcare Recruitment, Driver Training Programs">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/premium.css">
@@ -14,30 +14,44 @@
 
 <nav class="navbar" id="navbar">
   <div class="container"><div class="nav-inner">
-    <a href="index.html" class="nav-logo"><span class="logo-icon">IGT</span><div><span class="logo-main">IBREU Global</span><span class="logo-sub">Inspiring Potential</span></div></a>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">IGT</span>
+    </a>
     <div class="nav-links" id="nav-links">
       <a href="index.html"><i data-lucide="home"></i> Home</a>
       <a href="about.html"><i data-lucide="info"></i> About</a>
       <a href="services.html" class="active"><i data-lucide="briefcase"></i> Services</a>
-      <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Jobs</a>
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-trigger"><i data-lucide="briefcase"></i> Jobs <i data-lucide="chevron-down" class="chevron"></i></a>
+        <div class="dropdown-content">
+          <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
+          <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
+        </div>
+      </div>
       <a href="candidates.html"><i data-lucide="user-round"></i> Candidates</a>
       <a href="employers.html"><i data-lucide="building"></i> Employers</a>
       <a href="training.html"><i data-lucide="graduation-cap"></i> Training</a>
       <a href="contact.html"><i data-lucide="mail"></i> Contact</a>
     </div>
     <div class="nav-actions">
-      <a href="nursing-jobs.html" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;"><i data-lucide="arrow-right"></i> Apply Now</a>
+      <a href="index.html#jobs-now" class="btn btn-cta" style="padding:10px 20px;font-size:0.82rem;"><i data-lucide="briefcase"></i> Open Jobs</a>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </div></div>
 </nav>
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebar-header"><a href="index.html" class="nav-logo sidebar-logo"><span class="logo-main">IBREU</span><span class="logo-sub">Global Talent</span></a><button class="sidebar-close" id="sidebar-close"><i data-lucide="xmark"></i></button></div>
+  <div class="sidebar-header">
+    <a href="index.html" class="nav-logo sidebar-logo">
+      <span class="logo-icon" style="width:40px; height:40px; background:var(--grad-gold); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--black);">IGT</span>
+    </a>
+    <button class="sidebar-close" id="sidebar-close"><i data-lucide="x"></i></button>
+  </div>
   <nav class="sidebar-nav">
     <a href="index.html"><i data-lucide="home"></i> Home</a><a href="about.html"><i data-lucide="info"></i> About Us</a>
     <a href="services.html"><i data-lucide="briefcase"></i> Services</a><a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
-    <a href="candidates.html"><i data-lucide="heart-pulse"></i> For Candidates</a><a href="employers.html"><i data-lucide="building"></i> For Employers</a>
+    <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
+    <a href="candidates.html"><i data-lucide="activity"></i> For Candidates</a><a href="employers.html"><i data-lucide="building"></i> For Employers</a>
     <a href="training.html"><i data-lucide="graduation-cap"></i> Training</a><a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
   </nav>
   <div class="sidebar-footer">
@@ -68,76 +82,87 @@
       </div>
 
       <div class="cards-grid">
-        <div class="service-card reveal glass-light">
+        <!-- 1. International Recruitment -->
+        <div class="service-card reveal glass-light hover-shine">
           <span class="service-num">01</span>
-          <div class="service-icon-wrap"><i data-lucide="globe-2"></i></div>
+          <div class="service-icon-wrap"><i data-lucide="globe"></i></div>
           <h3>International Recruitment</h3>
-          <p>We help healthcare institutions find qualified, job-ready candidates across key markets with a thorough and efficient process.</p>
+          <p style="color: rgb(44, 37, 31);">We connect top-tier healthcare institutions with qualified, job-ready nursing professionals across global markets.</p>
           <ul class="service-list">
-            <li><i data-lucide="circle"></i> Candidate sourcing &amp; shortlisting</li>
-            <li><i data-lucide="circle"></i> Pre-screening &amp; qualification verification</li>
-            <li><i data-lucide="circle"></i> Interview coordination</li>
-            <li><i data-lucide="circle"></i> Placement support &amp; follow-up</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Candidate sourcing & shortlisting</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Qualification verification</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Interview coordination</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Placement follow-up</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-1 glass-light">
+
+        <!-- 2. International Job Assistance -->
+        <div class="service-card reveal delay-1 glass-light hover-shine">
           <span class="service-num">02</span>
           <div class="service-icon-wrap"><i data-lucide="stethoscope"></i></div>
           <h3>International Job Assistance</h3>
-          <p>We support nurses and healthcare professionals who are ready to build careers abroad, guiding them at every step.</p>
+          <p style="color: rgb(44, 37, 31);">Personalized support for nurses ready to take their career global. We guide you through every milestone.</p>
           <ul class="service-list">
-            <li><i data-lucide="circle"></i> Country-specific job matching</li>
-            <li><i data-lucide="circle"></i> Application support &amp; guidance</li>
-            <li><i data-lucide="circle"></i> Opportunity briefings</li>
-            <li><i data-lucide="circle"></i> Ongoing candidate support</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Country-specific matching</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Application guidance</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Opportunity briefings</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Career pathing</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-2 glass-light">
+
+        <!-- 3. Training & Licensing -->
+        <div class="service-card reveal delay-2 glass-light hover-shine">
           <span class="service-num">03</span>
           <div class="service-icon-wrap"><i data-lucide="graduation-cap"></i></div>
-          <h3>Training &amp; Licensing Support</h3>
-          <p>Guidance and support for professional licensing and skill development programs that ensure destination-country readiness.</p>
+          <h3>Training & Licensing</h3>
+          <p style="color: rgb(44, 37, 31);"> Expert guidance for professional licensing and skill-readiness programs for your destination country.</p>
           <ul class="service-list">
-            <li><i data-lucide="circle"></i> DHA, DOH, HAAD, MOH UAE guidance</li>
-            <li><i data-lucide="circle"></i> QCHP Qatar &amp; AHPRA Australia support</li>
-            <li><i data-lucide="circle"></i> Approbation guidance for Germany</li>
-            <li><i data-lucide="circle"></i> Exam preparation resources</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> UAE: DHA / DOH / HAAD</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Qatar: QCHP Licensing</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Australia: AHPRA Registration</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Germany: Approbation</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-3 glass-light">
+
+        <!-- 4. Documentation & Dataflow -->
+        <div class="service-card reveal delay-3 glass-light hover-shine">
           <span class="service-num">04</span>
-          <div class="service-icon-wrap"><i data-lucide="file-text"></i></div>
-          <h3>Documentation &amp; Dataflow</h3>
-          <p>We guide candidates through the complex documentation process including Dataflow verification for a smooth career transition.</p>
+          <div class="service-icon-wrap"><i data-lucide="file-check"></i></div>
+          <h3>Documentation & Dataflow</h3>
+          <p style="color: rgb(44, 37, 31);">We simplify the complex credentialing process, ensuring your documentation is accurate and verified.</p>
           <ul class="service-list">
-            <li><i data-lucide="circle"></i> Dataflow credential verification</li>
-            <li><i data-lucide="circle"></i> Document checklist preparation</li>
-            <li><i data-lucide="circle"></i> Application package review</li>
-            <li><i data-lucide="circle"></i> Step-by-step process walkthrough</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Dataflow verification support</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Document checklist audit</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Package preparation</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Status monitoring</li>
           </ul>
         </div>
-        <div class="service-card reveal glass-light">
+
+        <!-- 5. Interview Preparation -->
+        <div class="service-card reveal glass-light hover-shine">
           <span class="service-num">05</span>
-          <div class="service-icon-wrap"><i data-lucide="messages-square"></i></div>
+          <div class="service-icon-wrap"><i data-lucide="message-square-quote"></i></div>
           <h3>Interview Preparation</h3>
-          <p>Confidence in interviews makes the difference. We prepare candidates to present professionally and communicate effectively.</p>
+          <p style="color: rgb(44, 37, 31);">Boost your confidence with mock interviews and professional coaching session tailored to global employers.</p>
           <ul class="service-list">
-            <li><i data-lucide="circle"></i> Mock interview sessions</li>
-            <li><i data-lucide="circle"></i> Professional presentation coaching</li>
-            <li><i data-lucide="circle"></i> CV &amp; profile review</li>
-            <li><i data-lucide="circle"></i> Employer expectations briefings</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> One-on-one mock sessions</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> CV & Profile enhancement</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Grooming & Presentation</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Q&A masterclasses</li>
           </ul>
         </div>
-        <div class="service-card reveal delay-1 glass-light">
+
+        <!-- 6. Employer Solutions -->
+        <div class="service-card reveal delay-1 glass-light hover-shine">
           <span class="service-num">06</span>
-          <div class="service-icon-wrap"><i data-lucide="building-2"></i></div>
-          <h3>Employer Talent Solutions</h3>
-          <p>We partner with healthcare institutions to provide reliable, results-driven workforce solutions for their staffing needs.</p>
+          <div class="service-icon-wrap"><i data-lucide="building"></i></div>
+          <h3>Employer Solutions</h3>
+          <p style="color: rgb(44, 37, 31);">Strategic staffing partnerships for hospitals and clinics seeking reliable, high-quality healthcare talent.</p>
           <ul class="service-list">
-            <li><i data-lucide="circle"></i> Talent identification &amp; sourcing</li>
-            <li><i data-lucide="circle"></i> Mass hiring coordination</li>
-            <li><i data-lucide="circle"></i> Workforce planning support</li>
-            <li><i data-lucide="circle"></i> Long-term recruitment partnerships</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Bulk recruitment drives</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Specialized talent sourcing</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Deployment management</li>
+            <li><i data-lucide="check-circle" style="color:var(--gold); font-size: 0.8rem;"></i> Partnership planning</li>
           </ul>
         </div>
       </div>
@@ -147,10 +172,10 @@
   <!-- CTA -->
   <section class="section section-dark text-center">
     <div class="container fade-up">
-      <span class="section-label">Ready?</span>
-      <h2>Let's Find the Right Solution For You</h2>
+      <span class="section-label">Get Started</span>
+      <h2>Ready to Find the Right Solution?</h2>
       <div class="divider-gold"></div>
-      <p style="max-width:520px;margin:0 auto 40px;color:rgba(255,255,255,0.6);">Whether you're a candidate or an employer, we have a service that fits your needs.</p>
+      <p style="max-width:520px;margin:0 auto 40px;color:rgba(255,255,255,0.6);">Whether you're a candidate or an employer, we have the expertise to help you succeed.</p>
       <div class="btn-group" style="justify-content:center;">
         <a href="nursing-jobs.html" class="btn btn-cta"><i data-lucide="arrow-right"></i> Find Opportunities</a>
         <a href="contact.html" class="btn btn-outline">Employer Enquiry</a>
@@ -162,31 +187,79 @@
 
 <footer class="footer">
   <div class="footer-top-border"></div>
-  <div class="footer-body"><div class="container"><div class="footer-grid">
-    <div class="footer-brand"><div class="footer-logo">IBREU Global Talent</div><div class="footer-tagline">Inspiring Potential Worldwide</div><p>UAE-based global recruitment connecting skilled professionals to international career opportunities.</p></div>
-    <div class="footer-col"><h5>Quick Links</h5><ul>
-      <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Home</a></li>
-      <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> About Us</a></li>
-      <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Services</a></li>
-      <li><a href="nursing-jobs.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Nursing Jobs</a></li>
-      <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Destinations</h5><ul>
-      <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> UAE</a></li><li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Qatar</a></li>
-      <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Australia</a></li><li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Germany</a></li>
-      <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Georgia</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Contact Us</h5>
-      <div class="footer-contact-item"><i data-lucide="message-circle" stroke-width="2.5"></i><span><a href="https://wa.me/971527171134">+971 52 717 1134</a></span></div>
-      <div class="footer-contact-item"><i data-lucide="mail"></i><span><a href="mailto:info@ibreuglobaltalent.com">info@ibreuglobaltalent.com</a></span></div>
-      <div class="footer-contact-item"><i data-lucide="map-pin"></i><span>UAE — United Arab Emirates</span></div>
+  <div class="footer-body">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <div class="footer-logo">IBREU Global Talent</div>
+          <div class="footer-tagline">Inspiring Potential Worldwide</div>
+          <p>UAE-based global recruitment and healthcare consultancy connecting skilled professionals to international career opportunities across UAE, Qatar, Australia, Germany, and beyond.</p>
+          <div class="footer-socials" style="margin-top:20px; display:flex; gap:15px;">
+             <a href="#" style="color:var(--gold);"><i data-lucide="facebook"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="instagram"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="linkedin"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col reveal delay-1">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="nursing-jobs.html">Nursing Jobs</a></li>
+            <li><a href="taxi-driver-jobs.html">Taxi Driver Jobs</a></li>
+            <li><a href="candidates.html">For Candidates</a></li>
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col reveal delay-2">
+          <h5>Destinations</h5>
+          <ul>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> UAE</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Qatar</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Australia</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Germany</a></li>
+            <li><a href="nursing-jobs.html"><i data-lucide="map-pin"></i> Georgia</a></li>
+          </ul>
+        </div>
+        <div class="footer-col reveal delay-3">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item">
+            <i data-lucide="message-circle" stroke-width="2.5"></i>
+            <span><a href="https://wa.me/971527171134" target="_blank">+971 52 717 1134</a><br><small style="color:rgba(255,255,255,0.4);">WhatsApp Available 24/7</small></span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="mail"></i>
+            <span><a href="mailto:info@ibreuglobaltalent.com">info@ibreuglobaltalent.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="map-pin"></i>
+            <span>Business Center, UAE<br><small style="color:rgba(255,255,255,0.4);">United Arab Emirates</small></span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div></div></div>
-  <div class="footer-bottom container"><span>&copy; 2025 IBREU Global Talent. All rights reserved.</span><span>Global Recruitment &middot; Healthcare Staffing</span></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+      <span>&copy; 2025 IBREU Global Talent. All rights reserved.</span>
+      <div class="footer-legal" style="display:flex; gap:20px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<a href="https://wa.me/971527171134" class="floating-wa" target="_blank"><i data-lucide="message-circle" stroke-width="2.5"></i></a>
+<a href="https://wa.me/971527171134" class="floating-wa" target="_blank" title="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M11.996 0c-6.627 0-12 5.373-12 12 0 2.112.548 4.103 1.517 5.845l-1.517 6.155 6.291-1.65c1.722.9 3.655 1.397 5.709 1.397 6.627 0 12-5.373 12-12s-5.373-12-12-12zm-4.464 7.202c.224-.045.45-.045.672-.045.334 0 .684.09.967.433.284.341.874 1.137.967 1.332.09.195.15.422.045.684s-.225.433-.375.617c-.15.185-.315.39-.45.541-.15.15-.315.315-.15.615.165.3.705 1.196 1.516 1.921.998.885 1.876 1.155 2.176 1.305.3.15.48.15.675 0s.54-.615.69-.825.315-.195.585-.09c.27.105 1.696.825 1.981.975.285.15.48.225.555.36s.075.645-.21 1.23c-.285.585-1.696 1.125-2.326 1.17s-1.276.045-3.056-.54c-1.78-.585-3.921-2.43-5.266-4.08-1.344-1.65-2.025-3.414-1.95-5.221C6.46 9.176 7.256 8.351 7.532 7.202z"/></svg>
+</a>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script src="js/main.js"></script>
 <script src="js/transitions.js"></script>
+<script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
 </body>
 </html>
