@@ -1,8 +1,4 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "framework": null,
-  "installCommand": "echo 'Skipping Install'",
-  "buildCommand": "echo 'Skipping Build'",
-  "outputDirectory": "."
+  "cleanUrls": true
 }
