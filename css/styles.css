@@ -265,7 +265,7 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   gap: 20px;
 }
 
-/* Logo — compact icon style */
+/* Logo — image style */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -273,20 +273,32 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   line-height: 1;
   flex-shrink: 0;
 }
-.nav-logo .logo-icon {
-  width: 42px;
-  height: 42px;
-  background: var(--grad-gold);
+.nav-logo .logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  background: white;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+.nav-logo:hover .logo-img {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(212,175,55,0.25);
+}
+/* Footer logo image - also white badge for consistency */
+.footer-logo-img {
+  height: 55px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  background: white;
+  padding: 6px 12px;
   border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--black);
-  letter-spacing: -0.5px;
-  box-shadow: 0 4px 15px rgba(212,175,55,0.2);
+  margin-bottom: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 .nav-logo .logo-main {
   font-family: var(--font-heading);
@@ -300,6 +312,21 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   color: rgba(255,255,255,0.4);
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+/* Footer logo image */
+.footer-logo-img {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 10px rgba(212,175,55,0.2));
+}
+
+/* Sidebar logo image */
+.sidebar-logo .logo-img {
+  height: 38px;
 }
 
 /* Desktop Nav Links */
