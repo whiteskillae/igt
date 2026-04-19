@@ -1,4 +1,4 @@
-/* ---- GOOGLE FONTS ---- */
+﻿/* ---- GOOGLE FONTS ---- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
 
 /* ---- CSS VARIABLES ---- */
@@ -243,7 +243,7 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 90px;
+  height: 110px;
   background: rgba(15, 15, 15, 0.95);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -278,8 +278,8 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   width: auto;
   display: block;
   object-fit: contain;
-  background: white;
-  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.856);
+  padding: 10px 20px;
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
@@ -290,12 +290,12 @@ p { color: var(--text-body); margin-bottom: 1rem; }
 }
 /* Footer logo image - also white badge for consistency */
 .footer-logo-img {
-  height: 90px;
+  height: 115px;
   width: auto;
   display: block;
   object-fit: contain;
   background: white;
-  padding: 12px 20px;
+  padding: 15px 30px;
   border-radius: var(--radius-md);
   margin-bottom: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -303,7 +303,7 @@ p { color: var(--text-body); margin-bottom: 1rem; }
 
 /* Sidebar logo image */
 .sidebar-logo .logo-img {
-  height: 38px;
+  height: 30px;
 }
 
 /* Desktop Nav Links */
