@@ -1440,7 +1440,20 @@ textarea.form-control {
 @media (max-width: 768px) {
     .announcement-ribbon {
         padding: 12px 0;
-        /* Ensure ribbon clears the fixed navbar with extra safety margin if needed */
+        margin-bottom: 0; /* Remove extra gap with hero */
+    }
+
+    /* Pull hero content up to reduce empty space under announcement */
+    .hero, .page-hero {
+        min-height: auto !important;
+        padding-top: 15px !important; 
+        padding-bottom: 60px !important;
+        display: block !important; /* Switch from flex to avoid vertical centering gap */
+    }
+
+    .hero-inner, .page-hero .container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 
     .ribbon-inner {

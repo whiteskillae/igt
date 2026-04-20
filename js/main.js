@@ -254,6 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
     taxi: {
       labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
       dataset: [150, 180, 210, 260, 305, 340]
+    },
+    australia: {
+      labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+      dataset: [22, 28, 35, 42, 48, 55]
     }
   };
 
