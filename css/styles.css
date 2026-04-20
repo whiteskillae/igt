@@ -1,4 +1,4 @@
-﻿/* ---- GOOGLE FONTS ---- */
+/* ---- GOOGLE FONTS ---- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
 
 /* ---- CSS VARIABLES ---- */
@@ -46,7 +46,7 @@
   --font-heading: 'Playfair Display', serif;
   --font-body:    'Montserrat', sans-serif;
 
-  --nav-height:   80px;
+  --nav-height:   85px;
   --section-pad:  clamp(60px, 10vw, 120px);
 }
 
@@ -190,9 +190,25 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   color: var(--black);
   box-shadow: 0 4px 15px rgba(212,175,55,0.3);
 }
-.btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+.btn-cta:hover, .btn-gold:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.4);
+  filter: brightness(1.1);
+}
+
+.btn-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  transition: 0.6s;
+  pointer-events: none;
+}
+
+.btn-cta:hover::after {
+  left: 120%;
+}
   color: var(--black);
 }
 
@@ -249,19 +265,19 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 115px;
-  background: rgba(15, 15, 15, 0.95);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(212,175,55,0.08);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 85px;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border-bottom: 1px solid rgba(212,175,55,0.12);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar.scrolled {
-  height: 85px;
-  background: rgba(10, 10, 10, 0.98);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border-bottom-color: rgba(212,175,55,0.2);
+  height: 65px;
+  background: rgba(8, 8, 8, 0.98);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  border-bottom-color: rgba(212,175,55,0.25);
 }
 
 .nav-inner {
@@ -281,19 +297,19 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   flex-shrink: 0;
 }
 .nav-logo .logo-img {
-  height: 60px;
+  height: 48px;
   width: auto;
   display: block;
   object-fit: contain;
   background: white;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
 .navbar.scrolled .nav-logo .logo-img {
-  height: 48px;
-  padding: 3px 10px;
+  height: 38px;
+  padding: 3px 8px;
 }
 .nav-logo:hover .logo-img {
   transform: translateY(-2px) scale(1.02);
@@ -554,9 +570,16 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(212,175,55,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(212,175,55,0.05) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(212,175,55,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(212,175,55,0.08) 0%, transparent 50%);
+  filter: blur(60px);
+  animation: meshMove 20s ease-in-out infinite alternate;
+}
+
+@keyframes meshMove {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(2%, 2%); }
 }
 
 /* Gold geometric line accent */
@@ -601,15 +624,31 @@ p { color: var(--text-body); margin-bottom: 1rem; }
 
 .hero-brand {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: var(--gold);
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 22px;
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 15px;
   text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  animation: fadeSlideRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-brand::after {
+  content: '';
+  height: 1px;
+  width: 50px;
+  background: var(--grad-gold);
+  opacity: 0.6;
+}
+
+@keyframes fadeSlideRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .hero h1 {
