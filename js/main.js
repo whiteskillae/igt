@@ -525,6 +525,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* -----------------------------------------------------------
+     13. JOBS DIRECTORY MODAL
+     ----------------------------------------------------------- */
+  const jobsModal = document.getElementById('jobs-modal');
+  const openModalBtn = document.getElementById('open-jobs-directory');
+  const closeModalBtn = document.getElementById('modal-close');
+  const modalBg = document.getElementById('modal-bg');
+
+  if (jobsModal && openModalBtn) {
+    const openModal = () => {
+      jobsModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // Refresh icons in case any weren't rendered
+      if(typeof lucide !== 'undefined') lucide.createIcons({ scope: jobsModal });
+    };
+
+    const closeModal = () => {
+      jobsModal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    openModalBtn.addEventListener('click', openModal);
+    closeModalBtn?.addEventListener('click', closeModal);
+    modalBg?.addEventListener('click', closeModal);
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && jobsModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
+
 });
 
 

@@ -1,4 +1,4 @@
-/* ---- GOOGLE FONTS ---- */
+﻿/* ---- GOOGLE FONTS ---- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
 
 /* ---- CSS VARIABLES ---- */
@@ -208,8 +208,6 @@ p { color: var(--text-body); margin-bottom: 1rem; }
 
 .btn-cta:hover::after {
   left: 120%;
-}
-  color: var(--black);
 }
 
 /* Outline Gold */
