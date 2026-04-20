@@ -275,18 +275,18 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   flex-shrink: 0;
 }
 .nav-logo .logo-img {
-  height: 85px;
+  height: 95px;
   width: auto;
   display: block;
   object-fit: contain;
   background: white;
-  padding: 10px 20px;
+  padding: 4px 12px;
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
 .navbar.scrolled .nav-logo .logo-img {
-  height: 65px;
+  height: 75px;
 }
 .nav-logo:hover .logo-img {
   transform: translateY(-2px) scale(1.02);
@@ -294,12 +294,12 @@ p { color: var(--text-body); margin-bottom: 1rem; }
 }
 /* Footer logo image - also white badge for consistency */
 .footer-logo-img {
-  height: 125px;
+  height: 140px;
   width: auto;
   display: block;
   object-fit: contain;
   background: white;
-  padding: 15px 30px;
+  padding: 8px 18px;
   border-radius: var(--radius-md);
   margin-bottom: 25px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -307,7 +307,8 @@ p { color: var(--text-body); margin-bottom: 1rem; }
 
 /* Sidebar logo image */
 .sidebar-logo .logo-img {
-  height: 30px;
+  height: 45px;
+  padding: 4px 10px;
 }
 
 /* Desktop Nav Links */
