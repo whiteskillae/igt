@@ -1432,4 +1432,117 @@ textarea.form-control {
     .feature-body-premium {
         padding: 30px;
     }
-}
+}
+
+/* ================================================================
+   MOBILE RESPONSIVENESS & SIDEBAR POLISH
+   ================================================================ */
+@media (max-width: 768px) {
+    .announcement-ribbon {
+        padding: 12px 0;
+        /* Ensure ribbon clears the fixed navbar with extra safety margin if needed */
+    }
+
+    .ribbon-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .ribbon-text {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+
+    .badge-new {
+        margin-bottom: 5px;
+        /* Increase visibility by adding a bit of top margin as requested */
+        margin-top: 5px;
+    }
+
+    .ribbon-link {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+    }
+
+    /* Modal Mobile Adjustments */
+    .modal-content {
+        padding: 30px 20px;
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Sidebar Details/Summary Styles */
+.sidebar-jobs-details {
+    width: 100%;
+}
+
+.sidebar-jobs-details summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    cursor: pointer;
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+    list-style: none; /* Hide default arrow */
+}
+
+.sidebar-jobs-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.sidebar-jobs-details summary i:first-child {
+    width: 18px;
+    color: var(--gold);
+    opacity: 0.7;
+}
+
+.sidebar-jobs-details summary .chevron-icon {
+    margin-left: auto;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+}
+
+.sidebar-jobs-details[open] summary .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.sidebar-jobs-details summary:hover {
+    color: var(--gold);
+    background: rgba(212,175,55,0.04);
+}
+
+.sidebar-jobs-list {
+    padding: 5px 0 10px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-jobs-list a {
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
+    border-left: none !important;
+    opacity: 0.8;
+}
+
+.sidebar-jobs-list a:hover {
+    opacity: 1;
+    background: none !important;
+    color: var(--gold) !important;
+}
