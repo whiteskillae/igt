@@ -114,6 +114,12 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   padding: 0 24px;
 }
 
+/* Wide container for Navbar to allow corner logo alignment */
+.navbar .container {
+  max-width: 100%;
+  padding: 0 40px;
+}
+
 /* ---- UTILITY ---- */
 .text-center   { text-align: center; }
 .text-gold     { color: var(--gold); }
@@ -275,18 +281,19 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   flex-shrink: 0;
 }
 .nav-logo .logo-img {
-  height: 95px;
+  height: 60px;
   width: auto;
   display: block;
   object-fit: contain;
   background: white;
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
 .navbar.scrolled .nav-logo .logo-img {
-  height: 75px;
+  height: 48px;
+  padding: 3px 10px;
 }
 .nav-logo:hover .logo-img {
   transform: translateY(-2px) scale(1.02);
@@ -299,7 +306,7 @@ p { color: var(--text-body); margin-bottom: 1rem; }
   display: block;
   object-fit: contain;
   background: white;
-  padding: 8px 18px;
+  
   border-radius: var(--radius-md);
   margin-bottom: 25px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
