@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
              <circle class="svg-path" cx="50" cy="50" r="45" fill="none" stroke="url(#gold-grad)" stroke-width="2" stroke-linecap="round"/>
              <path d="M35,35 L65,35 L65,65 L35,65 Z" fill="none" stroke="rgba(212,175,55,0.4)" stroke-width="1" transform="rotate(45 50 50)"/>
           </svg>
-          <div class="loader-logo">IBREU</div>
+          <div class="loader-logo">IGT</div>
         </div>
       </div>
       <style>
@@ -39,15 +39,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loader = document.getElementById('page-loader');
 
-    // Remove loader when page is fully loaded
-    window.addEventListener('load', () => {
-        setTimeout(() => {
+    const hideLoader = () => {
+        if (!loader.classList.contains('loader-hidden')) {
             loader.classList.add('loader-hidden');
             setTimeout(() => {
                 loader.style.display = 'none';
             }, 600); // Matches CSS transition duration
-        }, 150); // Small delay for smooth feel
+        }
+    };
+
+    // Remove loader when page is fully loaded
+    window.addEventListener('load', () => {
+        setTimeout(hideLoader, 150); // Small delay for smooth feel
     });
+
+    // Fix for back-button (bfcache)
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            hideLoader();
+        }
+    });
+
+    // Fail-safe: Hide loader after 5 seconds regardless of load event
+    setTimeout(hideLoader, 5000);
 
     // Intercept link clicks for smooth exit animation
     const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"]):not(.no-transition)');
