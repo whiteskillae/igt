@@ -3,17 +3,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Australia Job Opportunities | Work Visa & Support | IBREU</title>
-  <meta name="description" content="Explore job opportunities in Australia with IBREU Global Talent. We assist with visa processing, document support, and job placement in construction, hospitality, and supermarket sectors.">
-  <meta name="keywords" content="Australia Jobs, Work Visa Australia, Construction Jobs Australia, Hotel Jobs Australia, IBREU Global Talent">
+  <title>Australia Job Vacancy | Multi-Sector Career Pathways | IBREU Global Talent</title>
+  <meta name="description" content="Apply for high-demand jobs in Australia across Supermarket, Construction, Hospitality, and Logistics. Full visa sponsorship, 3-month processing, and PR pathways supported.">
+  <meta name="keywords" content="Australia Job Vacancy, Australia Work Visa, Supermarket Staff Australia, Construction Labor Australia, IBREU Global, Australia PR Pathway, Job Opportunities Australia">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ibreugtae.com/australia-jobs.html">
+
+  <meta property="og:title" content="Australia Job Opportunities | Multi-Sector Recruitment | IBREU">
+  <meta property="og:description" content="Start your Australian career journey. Multi-sector vacancies with 100% visa support.">
+  <meta property="og:image" content="https://ibreugtae.com/images/australia_jobs_hero.png">
+  <meta property="og:url" content="https://ibreugtae.com/australia-jobs.html">
+  <meta property="og:type" content="article">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/premium.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="icon" type="image/png" href="images/igtlogo.png">
   <link rel="apple-touch-icon" href="images/igtlogo.png">
+  <style>
+    .sector-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 40px;
+        border: 1px solid rgba(0,0,0,0.05);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 420px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+    .sector-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        border-color: var(--gold);
+    }
+    .sector-card-img-wrap {
+        width: 100%;
+        height: 200px;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 25px;
+    }
+    .sector-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+    .sector-card:hover img {
+        transform: scale(1.1);
+    }
+    .sector-card h4 {
+        color: #1a1a1a !important;
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    .sector-card p {
+        color: #666 !important;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .sector-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    .sector-tag {
+        font-size: 0.75rem;
+        background: rgba(212, 175, 55, 0.1);
+        color: var(--gold);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+    }
+    .process-line {
+        position: absolute;
+        left: 22px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(212, 175, 55, 0.2);
+        z-index: 1;
+    }
+    
+    /* Hero Stats Fix */
+    .hero-stats-container {
+        display: flex; 
+        justify-content: center; 
+        gap: 40px; 
+        flex-wrap: wrap;
+        margin-top: 50px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        padding: 30px 50px;
+        border-radius: 30px;
+        border: 1px solid rgba(255,255,255,0.1);
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .stat-item {
+        text-align: center;
+        min-width: 120px;
+    }
+    .stat-value {
+        color: #FFE484; 
+        font-size: 2.2rem; 
+        font-weight: 800;
+        line-height: 1.2;
+    }
+    .stat-label {
+        color: rgba(255,255,255,0.7); 
+        font-size: 0.85rem; 
+        text-transform: uppercase; 
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+
+    /* Form Styles */
+    .apply-form-wrap {
+        background: #fff;
+        padding: 50px;
+        border-radius: 32px;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    .form-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #1a1a1a;
+        margin-bottom: 5px;
+    }
+    .form-subtitle {
+        color: #888;
+        margin-bottom: 35px;
+        font-size: 0.95rem;
+    }
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .form-control {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(0,0,0,0.1);
+        font-family: inherit;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: #f9f9f9;
+    }
+    .form-control:focus {
+        outline: none;
+        border-color: var(--gold);
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+    }
+    .form-submit {
+        width: 100%;
+        padding: 18px;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+    @media (max-width: 768px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+        .apply-form-wrap {
+            padding: 30px;
+        }
+        .hero-stats-container {
+            padding: 20px;
+            gap: 20px;
+        }
+        .stat-value {
+            font-size: 1.6rem;
+        }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,13 +217,11 @@
         <a href="services.html"><i data-lucide="briefcase"></i> Services</a>
         <div class="nav-dropdown">
           <a href="#" class="dropdown-trigger active"><i data-lucide="briefcase"></i> Jobs <i data-lucide="chevron-down" class="chevron"></i></a>
-          <div class="dropdown-content">
-            <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
-            <a href="uae-nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs <span class="nav-uae-tag">🇦🇪 UAE</span></a>
-            <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Driver Jobs</a>
-            <a href="uae-taxi-jobs.html"><i data-lucide="car"></i> Taxi Jobs <span class="nav-uae-tag">🇦🇪 UAE</span></a>
-            <a href="australia-jobs.html" class="active"><i data-lucide="map"></i> Australia Jobs</a>
-          </div>
+        <div class="dropdown-content">
+          <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
+          <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Jobs</a>
+          <a href="australia-jobs.html"><i data-lucide="map"></i> Australia Jobs</a>
+        </div>
         </div>
         <a href="candidates.html"><i data-lucide="user-round"></i> Candidates</a>
         <a href="employers.html"><i data-lucide="building"></i> Employers</a>
@@ -65,7 +250,6 @@
   <nav class="sidebar-nav">
     <a href="index.html"><i data-lucide="home"></i> Home</a>
     <a href="about.html"><i data-lucide="info"></i> About Us</a>
-    <a href="services.html"><i data-lucide="briefcase"></i> Services</a>
     <details class="sidebar-jobs-details" open>
       <summary>
         <i data-lucide="briefcase"></i> Explore Careers
@@ -73,313 +257,281 @@
       </summary>
       <div class="sidebar-jobs-list">
         <a href="nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs</a>
-        <a href="uae-nursing-jobs.html"><i data-lucide="stethoscope"></i> Nursing Jobs <span class="nav-uae-tag">🇦🇪 UAE</span></a>
         <a href="taxi-driver-jobs.html"><i data-lucide="car"></i> Taxi Jobs</a>
-        <a href="uae-taxi-jobs.html"><i data-lucide="car"></i> Taxi Jobs <span class="nav-uae-tag">🇦🇪 UAE</span></a>
-        <a href="australia-jobs.html" class="active"><i data-lucide="map"></i> Australia Jobs</a>
+        <a href="australia-jobs.html"><i data-lucide="map"></i> Australia Jobs</a>
       </div>
     </details>
-    <a href="candidates.html"><i data-lucide="user-round"></i> For Candidates</a>
+    <a href="candidates.html"><i data-lucide="activity"></i> For Candidates</a>
     <a href="employers.html"><i data-lucide="building"></i> For Employers</a>
     <a href="training.html"><i data-lucide="graduation-cap"></i> Training</a>
     <a href="contact.html"><i data-lucide="phone"></i> Contact Us</a>
   </nav>
-  <div class="sidebar-footer">
-    <a href="https://wa.me/971502454083" target="_blank" class="btn btn-wa" style="justify-content:center;"><i data-lucide="message-circle" stroke-width="2.5"></i> WhatsApp Us</a>
-  </div>
 </aside>
 
 <main class="page-content">
 
   <!-- HERO SECTION -->
-  <section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/australia_jobs.png'); background-size: cover; background-position: center; min-height: 60vh; display: flex; align-items: center;">
+  <section class="page-hero reveal" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('images/australia_jobs_hero.png') center/cover; min-height: 85vh; display: flex; align-items: center; position: relative; padding-bottom: 100px;">
     <div class="container text-center">
       <div class="breadcrumb">
-        <a href="index.html">Home</a> <i data-lucide="chevron-right"></i> Australia Jobs
+        <a href="index.html" style="color: rgba(255,255,255,0.6);">Home</a> <i data-lucide="chevron-right" style="color: rgba(255,255,255,0.6);"></i> Australia Jobs
       </div>
-      <div class="hero-brand">Ibreu Global Talent</div>
-      <h1>🇦🇺 Australia Is Calling!</h1>
-      <p style="max-width: 800px; margin: 0 auto; color: rgba(255,255,255,0.95) !important;">Build your future in Australia with expert guidance and full support. We specialize in connecting skilled individuals with career opportunities across multiple sectors.</p>
-      <div class="btn-group" style="justify-content: center; margin-top: 30px;">
-        <a href="#apply-form" class="btn btn-cta"> <i data-lucide="arrow-down"></i> Apply Now</a>
-        <a href="https://wa.me/971502454083" target="_blank" class="btn btn-wa">
-          <i data-lucide="message-circle"></i> WhatsApp Now
-        </a>
+      <div class="hero-brand" style="margin-bottom: 15px;">IBREU GLOBAL TALENT</div>
+      <h1 style="color: #fff; margin-bottom: 25px;">AUSTRALIA JOB VACANCY 🇦🇺</h1>
+      <p style="max-width: 850px; margin: 0 auto 45px; color: rgba(255,255,255,0.9); font-size: 1.25rem; line-height: 1.8;">
+        Now Hiring – Multiple Sectors across Australia. High-demand roles with full visa sponsorship and transparent 3-month processing.
+      </p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="#apply" class="btn btn-gold btn-lg" style="padding: 20px 50px; font-weight: 800; font-size: 1.1rem;">Start Application <i data-lucide="arrow-right"></i></a>
+        <a href="https://wa.me/971502454083" target="_blank" class="btn btn-wa btn-lg" style="padding: 20px 50px;"><i data-lucide="message-circle"></i> WhatsApp Now</a>
       </div>
-    </div>
-  </section>
 
-  <div class="section-divider dark-to-offwhite"></div>
-
-  <!-- CORE BENEFITS -->
-  <section class="section section-offwhite">
-    <div class="container">
-      <div class="cards-grid">
-        <div class="service-card glass-light hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="check-circle" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--black);">Visa Processing</h3>
-          <p style="color:#222;">We provide end-to-end assistance with your Australia work visa processing to ensure a smooth journey.</p>
-        </div>
-        <div class="service-card glass-light hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="check-circle" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--black);">Easy Process</h3>
-          <p style="color:#222;">Our recruitment and relocation process is designed to be straightforward and stress-free for candidates.</p>
-        </div>
-        <div class="service-card glass-light hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="check-circle" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--black);">Document Support</h3>
-          <p style="color:#222;">Expert assistance with all necessary documentation and verification required for Australian immigration.</p>
-        </div>
-        <div class="service-card glass-light hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="check-circle" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--black);">Expert Advice</h3>
-          <p style="color:#222;">Receive guidance from experienced consultants who understand the Australian job market and legal system.</p>
-        </div>
+      <!-- Hero Stats Fixed Layout -->
+      <div class="hero-stats-container">
+         <div class="stat-item">
+            <div class="stat-value">3 Months</div>
+            <div class="stat-label">Avg. Processing</div>
+         </div>
+         <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Visa Support</div>
+         </div>
+         <div class="stat-item">
+            <div class="stat-value">$28+/hr</div>
+            <div class="stat-label">Starting Wage</div>
+         </div>
       </div>
     </div>
   </section>
 
-  <!-- JOB OPPORTUNITIES -->
-  <section class="section section-dark">
+  <!-- SECTOR SPOTLIGHT -->
+  <section class="section section-offwhite" id="sectors">
     <div class="container">
       <div class="section-header text-center">
-        <span>Now Hiring</span>
-        <h2>Find A Job In Australia</h2>
+        <span class="section-label reveal">Opportunities</span>
+        <h2 style="color: #1a1a1a !important;">Available Positions</h2>
         <div class="divider-gold"></div>
+        <p>Explore high-demand roles currently open for international candidates in Australia.</p>
       </div>
 
-      <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <!-- Role 1: Supermarket Staff -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="shopping-basket" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Supermarket Staff</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Roles in inventory, customer service, and shelf management across major retail chains.</p>
+      <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px;">
+        
+        <!-- Supermarket & Retail -->
+        <div class="sector-card reveal">
+           <div>
+              <div class="sector-card-img-wrap">
+                 <img src="images/australia_supermarket.png" alt="Australia Supermarket Jobs">
+              </div>
+              <h4>Supermarket & Retail</h4>
+              <p>Join major Australian retail chains. Roles focus on inventory management, customer service, and store operations in premium retail environments.</p>
+              <div class="sector-tags">
+                 <span class="sector-tag">Supermarket Staff</span>
+                 <span class="sector-tag">Cashiers</span>
+                 <span class="sector-tag">Warehouse Helpers</span>
+              </div>
+           </div>
         </div>
 
-        <!-- Role 2: Hotel Staff -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="hotel" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Hotel Staff</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Positions in hospitality, guest services, and housekeeping for leading AU hotels.</p>
+        <!-- Hospitality & Tourism -->
+        <div class="sector-card reveal delay-1">
+           <div>
+              <div class="sector-card-img-wrap">
+                 <img src="images/australia_hospitality.png" alt="Australia Hospitality Jobs">
+              </div>
+              <h4>Hotel & Hospitality</h4>
+              <p>Professional placements in Australia's luxury hotel sector. Opportunities for service excellence in world-class tourism hubs.</p>
+              <div class="sector-tags">
+                 <span class="sector-tag">Hotel Staff</span>
+                 <span class="sector-tag">Waiters</span>
+                 <span class="sector-tag">Supervisors</span>
+              </div>
+           </div>
         </div>
 
-        <!-- Role 3: Construction Workers -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="hard-hat" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Construction Workers</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">General labor and skilled trade roles in Australia's booming infrastructure sector.</p>
+        <!-- Construction & Infrastructure -->
+        <div class="sector-card reveal delay-2">
+           <div>
+              <div class="sector-card-img-wrap">
+                 <img src="images/australia_construction.png" alt="Australia Construction Jobs">
+              </div>
+              <h4>Construction & Workers</h4>
+              <p>Australia's infrastructure boom requires skilled and semi-skilled labor. Safe working conditions and premium benefits included.</p>
+              <div class="sector-tags">
+                 <span class="sector-tag">Construction Workers</span>
+                 <span class="sector-tag">General Helpers</span>
+                 <span class="sector-tag">Safety Team</span>
+              </div>
+           </div>
         </div>
 
-        <!-- Role 4: Waiters -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="utensils" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Waiters</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Professional food and beverage service roles in premium dining and cafes.</p>
+        <!-- Logistics & Warehousing -->
+        <div class="sector-card reveal">
+           <div>
+              <div class="sector-card-img-wrap">
+                 <img src="images/australia_logistics.png" alt="Australia Logistics Jobs">
+              </div>
+              <h4>Logistics & Drivers</h4>
+              <p>Be part of the essential transport network. Professional environments with modern equipment and high safety standards.</p>
+              <div class="sector-tags">
+                 <span class="sector-tag">Drivers</span>
+                 <span class="sector-tag">Forklift Operators</span>
+                 <span class="sector-tag">Logistics Ops</span>
+              </div>
+           </div>
         </div>
 
-        <!-- Role 5: Supervisors -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="users" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Supervisors</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Leadership roles managing teams across hospitality, retail, and construction sites.</p>
-        </div>
-
-        <!-- Role 6: General Helpers -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="hand-helping" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">General Helpers</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Versatile support roles assisting in daily operations across multiple sectors.</p>
-        </div>
-
-        <!-- Role 7: Drivers -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="truck" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Drivers</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Professional driving positions for logistics, transport, and delivery networks.</p>
-        </div>
-
-        <!-- Role 8: Forklift Operators -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="package-search" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Forklift Operators</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Skilled machinery operation within warehouse and construction environments.</p>
-        </div>
-
-        <!-- Role 9: Warehouse Helpers -->
-        <div class="service-card glass-premium hover-shine">
-          <div class="service-icon-wrap"><i data-lucide="container" style="color:var(--gold);"></i></div>
-          <h3 style="color:var(--white) !important;">Warehouse Helpers</h3>
-          <p style="color:rgba(255,255,255,0.9) !important;">Supporting logistics and distribution center operations with efficiency.</p>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- RECRUITMENT PROCESS -->
-  <section class="section section-offwhite force-dark-text">
+  <section class="section section-dark">
     <div class="container">
       <div class="section-header text-center">
-        <span>The Process</span>
-        <h2>6-Step Recruitment Journey</h2>
+        <span class="section-label reveal">Step-by-Step</span>
+        <h2 style="color: #fff !important;">The 6-Step Recruitment Process</h2>
         <div class="divider-gold"></div>
+        <p style="color: rgba(255,255,255,0.7);">Our transparent process takes you from submission to visa in approx. 3 months.</p>
       </div>
 
-      <div class="roadmap-container" style="max-width: 900px; margin: 0 auto;">
+      <div style="max-width: 900px; margin: 0 auto; position: relative; padding-left: 60px;">
+        <div class="process-line"></div>
+        
         <!-- Step 1 -->
-        <div class="roadmap-step">
-          <div class="roadmap-num">1</div>
-          <div class="roadmap-content">
-            <h4 style="color:var(--black) !important;">Document Submission</h4>
-            <p style="color:#222 !important;">Submit your updated CV, Passport Copy, and Passport Size Photograph to begin the evaluation.</p>
+        <div class="reveal" style="margin-bottom: 60px; position: relative;">
+          <div style="position: absolute; left: -53px; top: 0; background: var(--gold); color: #000; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 2; box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);">1</div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 20px;">
+             <h4 style="color: #FFE484 !important; margin-bottom: 15px;">Step 1: Document Submission</h4>
+             <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.8);">
+                <li>• Updated CV</li>
+                <li>• Passport Copy</li>
+                <li>• Passport Size Photo</li>
+             </ul>
           </div>
         </div>
+
         <!-- Step 2 -->
-        <div class="roadmap-step">
-          <div class="roadmap-num">2</div>
-          <div class="roadmap-content">
-            <span class="badge-gold" style="float:right;">2-5 Days</span>
-            <h4 style="color:var(--black) !important;">Assessment</h4>
-            <p style="color:#222 !important;">Receive company assessment details. Candidates must sign and submit the assessment to proceed.</p>
+        <div class="reveal delay-1" style="margin-bottom: 60px; position: relative;">
+          <div style="position: absolute; left: -53px; top: 0; background: var(--gold); color: #000; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 2;">2</div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 20px;">
+             <h4 style="color: #FFE484 !important; margin-bottom: 15px;">Step 2: Assessment (2–5 Days)</h4>
+             <p style="margin: 0; color: rgba(255,255,255,0.8);">Candidate receives detailed company assessment details. Must sign and submit to move to the next stage.</p>
           </div>
         </div>
+
         <!-- Step 3 -->
-        <div class="roadmap-step">
-          <div class="roadmap-num">3</div>
-          <div class="roadmap-content">
-            <span class="badge-gold" style="float:right;">7-15 Days</span>
-            <h4 style="color:var(--black) !important;">Offer Contract</h4>
-            <p style="color:#222 !important;">Receive a comprehensive 12-page company contract. Must be signed and submitted for official processing.</p>
+        <div class="reveal delay-2" style="margin-bottom: 60px; position: relative;">
+          <div style="position: absolute; left: -53px; top: 0; background: var(--gold); color: #000; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 2;">3</div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 20px;">
+             <h4 style="color: #FFE484 !important; margin-bottom: 15px;">Step 3: Offer Contract (7–15 Days)</h4>
+             <p style="margin: 0; color: rgba(255,255,255,0.8);">Candidate receives a 12-page comprehensive company contract. Must be signed and submitted for final processing.</p>
           </div>
         </div>
+
         <!-- Step 4 -->
-        <div class="roadmap-step">
-          <div class="roadmap-num">4</div>
-          <div class="roadmap-content">
-            <h4 style="color:var(--black) !important;">ITR File Process</h4>
-            <p style="color:#222 !important;">After contract signing, your file will be officially processed for Income Tax Return (ITR) documentation.</p>
+        <div class="reveal" style="margin-bottom: 60px; position: relative;">
+          <div style="position: absolute; left: -53px; top: 0; background: var(--gold); color: #000; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 2;">4</div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 20px;">
+             <h4 style="color: #FFE484 !important; margin-bottom: 15px;">Step 4: ITR File Process</h4>
+             <p style="margin: 0; color: rgba(255,255,255,0.8);">After contract signing, the candidate file will be officially processed for ITR (Income Tax Return) registration.</p>
           </div>
         </div>
+
         <!-- Step 5 -->
-        <div class="roadmap-step">
-          <div class="roadmap-num">5</div>
-          <div class="roadmap-content">
-            <span class="badge-gold" style="float:right;">3-5 Days</span>
-            <h4 style="color:var(--black) !important;">Medical Process</h4>
-            <p style="color:#222 !important;">Undergo a medical examination at a Government Approved Hospital and submit the final reports.</p>
+        <div class="reveal delay-1" style="margin-bottom: 60px; position: relative;">
+          <div style="position: absolute; left: -53px; top: 0; background: var(--gold); color: #000; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 2;">5</div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 20px;">
+             <h4 style="color: #FFE484 !important; margin-bottom: 15px;">Step 5: Medical Process (3–5 Days)</h4>
+             <p style="margin: 0; color: rgba(255,255,255,0.8);">Undergo medical at a Government Approved Hospital and submit reports for visa clearance.</p>
           </div>
         </div>
+
         <!-- Step 6 -->
-        <div class="roadmap-step">
-          <div class="roadmap-num">6</div>
-          <div class="roadmap-content">
-            <span class="badge-gold" style="float:right;">5-7 Days</span>
-            <h4 style="color:var(--black) !important;">Work Permit & Visa</h4>
-            <p style="color:#222 !important;">Final issuance of your Australia Work Permit and Visa after ITR and Medical clearance.</p>
+        <div class="reveal delay-2" style="position: relative;">
+          <div style="position: absolute; left: -53px; top: 0; background: var(--gold); color: #000; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 2;">6</div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 20px; border-color: var(--gold);">
+             <h4 style="color: #FFE484 !important; margin-bottom: 15px;">Step 6: Work Permit & Visa</h4>
+             <p style="margin: 0; color: rgba(255,255,255,0.8);">Within 5–7 working days after ITR & Medical, your Work Permit & Visa will be issued. Total process: approx. 3 months.</p>
           </div>
         </div>
+
       </div>
 
-      <!-- Processing Summary & Note -->
-      <div class="reveal delay-5" style="margin-top: 40px; text-align: center;">
-        <div style="display:inline-block; background:rgba(212,175,55,0.1); border:1px solid var(--gold); padding:25px 40px; border-radius:20px; max-width:800px;">
-          <h3 style="color:var(--gold); margin-bottom:10px;">Total Processing Duration: Approx. 3 Months</h3>
-          <p style="color:var(--black); font-size:1.1rem; opacity:0.9;">
-            <strong>Special Note:</strong> If the file is rejected for any reason, re-application will be processed <strong>free of cost</strong>.
-          </p>
-          <p style="font-size:0.8rem; opacity:0.5; margin-top:10px; color: #666;">* Terms & Conditions Apply</p>
-        </div>
+      <!-- Special Note -->
+      <div class="reveal" style="margin-top: 80px; text-align: center; background: rgba(255,228,132,0.05); padding: 40px; border-radius: 30px; border: 1px dashed #FFE484;">
+         <h4 style="color: #FFE484 !important; margin-bottom: 10px;"><i data-lucide="info" style="vertical-align: middle;"></i> Re-application Policy</h4>
+         <p style="max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.8);">If your file is rejected, re-application will be done **free of cost**. Terms & Conditions Apply.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- CTA / CONTACT SECTION -->
-  <section class="section section-dark text-center">
-    <div class="container reveal">
-      <span class="section-label">Get In Touch</span>
-      <h2>📞 Contact Us Directly</h2>
-      <div class="divider-gold"></div>
-      <div style="background: rgba(212,175,55,0.1); border: 1px border var(--gold-light); padding: 40px; border-radius: 20px; max-width: 600px; margin: 0 auto;">
-         <div style="margin-bottom: 25px;">
-            <p style="font-size: 1.2rem; color: var(--gold); font-weight: 600;">📲 Call / WhatsApp</p>
-            <a href="https://wa.me/971502454083" target="_blank" style="font-size: 1.8rem; color: var(--white); text-decoration: none;">+971 50 245 4083</a>
-         </div>
-         <div style="margin-bottom: 25px;">
-            <p style="font-size: 1.1rem; color: var(--gold); font-weight: 600;">📧 Email Address</p>
-            <a href="mailto:info@ibreugtae.com" style="font-size: 1.4rem; color: var(--white); text-decoration: none;">info@ibreugtae.com</a>
-         </div>
-         <div>
-            <p style="font-size: 1.1rem; color: var(--gold); font-weight: 600;">🌐 Official Website</p>
-            <a href="https://www.ibreugtae.com" target="_blank" style="font-size: 1.4rem; color: var(--white); text-decoration: none;">www.ibreugtae.com</a>
-         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPLY FORM SECTION -->
-  <section class="section section-offwhite" id="apply-form">
+  <!-- APPLICATION FORM -->
+  <section class="section section-offwhite" id="apply">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-label">Take The Leap</span>
-        <h2>🚀 Start Your New Life Abroad!</h2>
-        <div class="divider-gold"></div>
-        <p>Fill this form to begin your application for Australian opportunities.</p>
-      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: flex-start;">
+         <div class="reveal">
+            <span class="section-label">Apply Now</span>
+            <h2 style="color: #1a1a1a !important;">Begin Your Application</h2>
+            <div class="divider-gold divider-gold-left"></div>
+            <p style="color: #555; margin-bottom: 30px;">Complete the form below to start your Australian career journey. Our expert consultants will contact you within 24 hours.</p>
+            
+            <div style="display: grid; gap: 20px;">
+               <div style="display: flex; align-items: center; gap: 15px; background: #fff; padding: 20px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+                  <i data-lucide="shield-check" style="color: var(--gold);"></i>
+                  <span style="font-weight: 600; color: #333;">Verified Visa Processing</span>
+               </div>
+               <div style="display: flex; align-items: center; gap: 15px; background: #fff; padding: 20px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+                  <i data-lucide="award" style="color: var(--gold);"></i>
+                  <span style="font-weight: 600; color: #333;">Government Approved Partners</span>
+               </div>
+               <div style="display: flex; align-items: center; gap: 15px; background: #fff; padding: 20px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+                  <i data-lucide="landmark" style="color: var(--gold);"></i>
+                  <span style="font-weight: 600; color: #333;">PR Guidance & Support</span>
+               </div>
+            </div>
+         </div>
 
-      <div class="apply-form-wrap reveal glass-light" style="max-width: 800px; margin: 0 auto;">
-        <div class="form-title">Australia Application Form</div>
-        <form id="australia-apply-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" class="form-control" required placeholder="Your full name">
+         <div class="reveal delay-1">
+            <div class="apply-form-wrap">
+               <h3 class="form-title">Candidate Profile</h3>
+               <p class="form-subtitle">For Australia Job Placement</p>
+               
+               <form action="#" id="aus-apply-form">
+                  <div class="form-row">
+                     <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                     </div>
+                     <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="Email" required>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" placeholder="+971..." required>
+                     </div>
+                     <div class="form-group">
+                        <label>Preferred Sector</label>
+                        <select class="form-control">
+                           <option>Supermarket & Retail</option>
+                           <option>Hotel & Hospitality</option>
+                           <option>Construction Workers</option>
+                           <option>Logistics & Drivers</option>
+                           <option>Other Positions</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label>Current Location</label>
+                     <input type="text" class="form-control" placeholder="City, Country" required>
+                  </div>
+                  <button type="submit" class="btn btn-gold form-submit">Submit Application <i data-lucide="arrow-right"></i></button>
+               </form>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" class="form-control" required placeholder="email@example.com">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Phone / WhatsApp *</label>
-              <div class="mobile-input-group">
-                <select name="dial_code" class="form-control" style="max-width: 110px;" required>
-                  <option value="+971">+971</option>
-                  <option value="+91">+91</option>
-                  <option value="+92">+92</option>
-                  <option value="+63">+63</option>
-                  <option value="+234">+234</option>
-                </select>
-                <input type="tel" id="phone" name="phone" class="form-control" required placeholder="50 123 4567">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="job_pref">Preferred Job Sector *</label>
-              <select id="job_pref" name="job_pref" class="form-control" required>
-                <option value="">Select Position</option>
-                <option value="Supermarket Staff">Supermarket Staff</option>
-                <option value="Hotel Staff">Hotel Staff</option>
-                <option value="Construction">Construction Workers</option>
-                <option value="Waiters">Waiters</option>
-                <option value="Supervisors">Supervisors</option>
-                <option value="General Helpers">General Helpers</option>
-                <option value="Drivers">Drivers</option>
-                <option value="Forklift Operators">Forklift Operators</option>
-                <option value="Warehouse Helpers">Warehouse Helpers</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Your Experience / Message</label>
-            <textarea id="message" name="message" class="form-control" placeholder="Briefly describe your work experience..."></textarea>
-          </div>
-          
-          <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" style="margin-bottom: 20px;"></div>
-
-          <button type="submit" class="btn btn-cta w-100" style="justify-content:center; width:100%; margin-top:15px;">
-            <i data-lucide="send"></i> Submit Registration
-          </button>
-        </form>
+         </div>
       </div>
     </div>
   </section>
@@ -394,32 +546,36 @@
         <div class="footer-brand reveal">
           <img src="images/igtlogo.png" alt="IBREU Global Talent" class="footer-logo-img">
           <div class="footer-tagline">Inspiring Potential Worldwide</div>
-          <p>Connecting skilled professionals to international career opportunities across Dubai, Qatar, Australia, Germany, and beyond.</p>
+          <p>UAE-based global recruitment and healthcare consultancy connecting skilled professionals to international career opportunities.</p>
+          <div class="footer-socials" style="margin-top:20px; display:flex; gap:15px;">
+             <a href="#" style="color:var(--gold);"><i data-lucide="facebook"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="instagram"></i></a>
+             <a href="#" style="color:var(--gold);"><i data-lucide="linkedin"></i></a>
+          </div>
         </div>
         <div class="footer-col reveal delay-1">
           <h5>Quick Links</h5>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="nursing-jobs.html">Nursing Jobs</a></li>
             <li><a href="taxi-driver-jobs.html">Taxi Jobs</a></li>
             <li><a href="australia-jobs.html">Australia Jobs</a></li>
-            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col reveal delay-2">
-          <h5>Job Roles</h5>
+          <h5>Destinations</h5>
           <ul>
-            <li><a href="nursing-jobs.html">Registered Nurses</a></li>
-            <li><a href="australia-jobs.html">Construction Workers</a></li>
-            <li><a href="australia-jobs.html">Hospitality Staff</a></li>
-            <li><a href="taxi-driver-jobs.html">Professional Drivers</a></li>
+            <li><a href="uae-nursing-jobs.html">UAE Nursing</a></li>
+            <li><a href="uae-taxi-jobs.html">UAE Taxi</a></li>
+            <li><a href="australia-jobs.html">Australia Jobs</a></li>
           </ul>
         </div>
         <div class="footer-col reveal delay-3">
-          <h5>Contact</h5>
+          <h5>Contact Us</h5>
           <div class="footer-contact-item">
-            <i data-lucide="message-circle"></i>
+            <i data-lucide="message-circle" stroke-width="2.5"></i>
             <span><a href="https://wa.me/971502454083" target="_blank">+971 50 245 4083</a></span>
           </div>
           <div class="footer-contact-item">
@@ -431,15 +587,11 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="container">
+    <div class="container text-center">
       <span>&copy; 2025 IBREU Global Talent. All rights reserved.</span>
     </div>
   </div>
 </footer>
-
-<a href="https://wa.me/971502454083" class="floating-wa" target="_blank" title="Chat on WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M11.996 0c-6.627 0-12 5.373-12 12 0 2.112.548 4.103 1.517 5.845l-1.517 6.155 6.291-1.65c1.722.9 3.655 1.397 5.709 1.397 6.627 0 12-5.373 12-12s-5.373-12-12-12zm-4.464 7.202c.224-.045.45-.045.672-.045.334 0 .684.09.967.433.284.341.874 1.137.967 1.332.09.195.15.422.045.684s-.225.433-.375.617c-.15.185-.315.39-.45.541-.15.15-.315.315-.15.615.165.3.705 1.196 1.516 1.921.998.885 1.876 1.155 2.176 1.305.3.15.48.15.675 0s.54-.615.69-.825.315-.195.585-.09c.27.105 1.696.825 1.981.975.285.15.48.225.555.36s.075.645-.21 1.23c-.285.585-1.696 1.125-2.326 1.17s-1.276.045-3.056-.54c-1.78-.585-3.921-2.43-5.266-4.08-1.344-1.65-2.025-3.414-1.95-5.221C6.46 9.176 7.256 8.351 7.532 7.202z"/></svg>
-</a>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="js/main.js"></script>
@@ -447,3 +599,5 @@
 <script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
 </body>
 </html>
+
+

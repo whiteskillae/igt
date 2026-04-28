@@ -1679,11 +1679,32 @@ textarea.form-control {
 }
 
 /* Force Dark Text Utility */
-.force-dark-text, .force-dark-text p, .force-dark-text li {
+.force-dark-text, .force-dark-text > p, .force-dark-text > ul > li, .force-dark-text > div > p {
     color: #1a1a1a !important;
 }
 
 /* Force Light Text Utility */
 .force-light-text, .force-light-text p, .force-light-text li {
     color: #ffffff !important;
+}
+
+/* --- Readability Fix: Ensure light text inside dark cards regardless of parent section --- */
+.service-card, .country-card, .glass-premium, .glass-dark, .premium-feature-box[style*="background: #111"], .premium-feature-box[style*="background: #1a1a1a"] {
+    color: #ffffff !important;
+}
+
+.service-card p, .service-card li, .service-card h1, .service-card h2, .service-card h3, .service-card h4,
+.country-card.active-uae-card p, .country-card.active-uae-card li, .country-card.active-uae-card h1, .country-card.active-uae-card h2, .country-card.active-uae-card h3, .country-card.active-uae-card h4,
+.glass-premium p, .glass-premium li, .glass-premium h1, .glass-premium h2, .glass-premium h3, .glass-premium h4,
+.glass-dark p, .glass-dark li, .glass-dark h1, .glass-dark h2, .glass-dark h3, .glass-dark h4 {
+    color: #ffffff !important;
+}
+
+/* Standardized benefit lists inside dark cards */
+.service-card .benefits-list li {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.service-card .benefits-list li i, .service-card .benefits-list li svg {
+    color: var(--gold) !important;
 }
