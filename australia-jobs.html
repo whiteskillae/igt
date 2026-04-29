@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="css/premium.css">
   <link rel="icon" type="image/png" href="images/igtlogo.png">
   <link rel="apple-touch-icon" href="images/igtlogo.png">
+  <!-- hCaptcha API -->
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
   <style>
     .sector-card {
         background: #fff;
@@ -494,36 +496,41 @@
                <p class="form-subtitle">Australia Job Placement</p>
                
                <form action="#" id="aus-apply-form">
+                  <input type="hidden" name="subject" value="New Application - Australia Job Placement">
                   <div class="form-row">
                      <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" class="form-control" placeholder="Your Name" required>
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                      </div>
                      <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" class="form-control" placeholder="Email" required>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                      </div>
                   </div>
                   <div class="form-row">
                      <div class="form-group">
                         <label>Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="+971..." required>
+                        <input type="tel" name="phone" class="form-control" placeholder="+971..." required>
                      </div>
                      <div class="form-group">
                         <label>Preferred Sector</label>
-                        <select class="form-control">
-                           <option>Supermarket & Retail</option>
-                           <option>Hotel & Hospitality</option>
-                           <option>Construction Workers</option>
-                           <option>Logistics & Drivers</option>
-                           <option>Other Positions</option>
+                        <select name="sector" class="form-control" required>
+                           <option value="Supermarket & Retail">Supermarket & Retail</option>
+                           <option value="Hotel & Hospitality">Hotel & Hospitality</option>
+                           <option value="Construction Workers">Construction Workers</option>
+                           <option value="Logistics & Drivers">Logistics & Drivers</option>
+                           <option value="Other Positions">Other Positions</option>
                         </select>
                      </div>
                   </div>
                   <div class="form-group">
                      <label>Current Location</label>
-                     <input type="text" class="form-control" placeholder="City, Country" required>
+                     <input type="text" name="location" class="form-control" placeholder="City, Country" required>
                   </div>
+                  
+                  <!-- hCaptcha Widget -->
+                  <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" style="margin-bottom: 20px;"></div>
+
                   <button type="submit" class="btn btn-gold form-submit">Submit Application <i data-lucide="arrow-right"></i></button>
                </form>
             </div>

@@ -1610,6 +1610,19 @@ textarea.form-control {
     }
 }
 
+/* Loading Spinner */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 /* Sidebar Details/Summary Styles */
 .sidebar-jobs-details {
     width: 100%;

@@ -105,49 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------------------------------
-     5. FORM VALIDATION & SUBMIT
+     5. FORM VALIDATION & SUBMIT (HANDLED BY WEB3FORMS SECTION)
   ----------------------------------------------------------- */
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      let isValid = true;
-      const requiredFields = form.querySelectorAll('[required]');
-
-      requiredFields.forEach(field => {
-        field.classList.remove('error');
-        if (!field.value.trim()) {
-          field.classList.add('error');
-          isValid = false;
-        }
-        // Email format check
-        if (field.type === 'email' && field.value.trim()) {
-          const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailReg.test(field.value.trim())) {
-            field.classList.add('error');
-            isValid = false;
-          }
-        }
-      });
-
-      if (!isValid) {
-        const firstError = form.querySelector('.error');
-        firstError?.focus();
-        firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
-
-      // Success state
-      const submitBtn = form.querySelector('[type="submit"]');
-      const origText  = submitBtn.innerHTML;
-      submitBtn.innerHTML  = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
-      submitBtn.disabled   = true;
-
-      setTimeout(() => {
-        showSuccess(form, submitBtn, origText);
-      }, 1600);
-    });
-  });
+  // Redundant block removed to avoid conflicts with Web3Forms handler below.
 
   function showSuccess(form, btn, origText) {
     btn.innerHTML  = origText;
@@ -432,44 +392,65 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const today = new Date().toDateString(); // More robust than toLocaleDateString()
+      // 1. VALIDATION
+      let isValid = true;
+      const requiredFields = form.querySelectorAll('[required]');
+
+      requiredFields.forEach(field => {
+        field.classList.remove('error');
+        if (!field.value.trim()) {
+          field.classList.add('error');
+          isValid = false;
+        }
+        if (field.type === 'email' && field.value.trim()) {
+          const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailReg.test(field.value.trim())) {
+            field.classList.add('error');
+            isValid = false;
+          }
+        }
+      });
+
+      if (!isValid) {
+        const firstError = form.querySelector('.error');
+        firstError?.focus();
+        firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // 2. RATE LIMITING
+      const today = new Date().toDateString();
       let storage = JSON.parse(localStorage.getItem('igt_submissions')) || { date: today, count: 0 };
       
       if (storage.date !== today) {
         storage = { date: today, count: 0 };
       }
       
-      if (storage.count >= 3) {
-        showFormMessage('limit', 'Daily Limit Reached', 'You can send up to 3 inquiries per day. Please wait until tomorrow or contact us via WhatsApp.');
-        return;
-      }
-      
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      if (storage.count >= 5) {
+        showFormMessage('limit', 'Daily Limit Reached', 'You have sent multiple inquiries today. Please wait until tomorrow or contact us via WhatsApp.');
         return;
       }
 
-      // 0. CAPTCHA VALIDATION
+      // 3. CAPTCHA VALIDATION
       const hCaptcha = form.querySelector('[name="h-captcha-response"]')?.value;
       if (!hCaptcha) {
         showFormMessage('limit', 'Captcha Required', 'Please complete the "I am human" verification before submitting.');
         return;
       }
 
-      // 1. DATA COLLECTION
+      // 4. DATA COLLECTION
       const formData = new FormData(form);
       const formObject = {};
       let fullMessageSummary = "";
 
       formData.forEach((value, key) => {
         formObject[key] = value;
-        // Build a readable summary for email body & WhatsApp fallback
-        if (key !== 'access_key' && key !== 'subject') {
+        if (key !== 'access_key' && key !== 'subject' && key !== 'h-captcha-response') {
           fullMessageSummary += `${key.toUpperCase()}: ${value}\n`;
         }
       });
 
-      // 2. MOBILE VALIDATION (Ensure digits after country code)
+      // Phone validation
       const phoneInput = form.querySelector('input[type="tel"]');
       if (phoneInput && phoneInput.value) {
         const digitsOnly = phoneInput.value.replace(/\D/g, '');
@@ -479,19 +460,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 3. TEXT LENGTH LIMIT (Safety check)
-      const textarea = form.querySelector('textarea');
-      if (textarea && textarea.value.length > 2000) {
-        showFormMessage('limit', 'Message Too Long', 'Please shorten your message below 2000 characters.');
-        return;
-      }
-
-      // Append required API fields
+      // Final API fields
       formObject.access_key = WEB3_ACCESS_KEY;
-      formObject.subject = `New Web Inquiry from ${formObject.name || 'Lead'}`;
+      if (!formObject.subject) {
+        formObject.subject = `New Web Inquiry from ${formObject.name || 'Lead'}`;
+      }
       formObject.from_name = "IBREU Global Talent Portal";
-      // Inject the summary into the message field so Web3Forms shows it clearly
-      formObject.message = fullMessageSummary;
+      formObject.message_summary = fullMessageSummary;
 
       const btn = form.querySelector('button[type="submit"]');
       const ogBtnText = btn ? btn.innerHTML : "Submit";
@@ -514,12 +489,13 @@ document.addEventListener('DOMContentLoaded', () => {
           localStorage.setItem('igt_submissions', JSON.stringify(storage));
           showFormMessage('success', 'Sent Successfully!', 'Your inquiry has been received. Our team will contact you shortly.');
           form.reset();
+          if(typeof hcaptcha !== 'undefined') hcaptcha.reset();
         } else {
           throw new Error(data.message || 'Submission failed');
         }
       } catch (error) {
         console.error("Submission Error:", error);
-        showFormMessage('error', 'Internal Issue', 'There was a technical problem. Please send your data via WhatsApp instead.', fullMessageSummary);
+        showFormMessage('error', 'Submission Failed', 'There was a technical problem. Please try again or use WhatsApp.', fullMessageSummary);
       } finally {
         if (btn) {
           btn.innerHTML = ogBtnText;
