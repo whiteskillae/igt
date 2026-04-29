@@ -1,57 +1,81 @@
-# IBREU Global Talent
+# IBREU Global Talent - Premium Recruitment Portal
 
-> Premium Recruitment Platform for International Healthcare and Transportation Professionals.
+> **Engineering Excellence in Global Healthcare and Transportation Recruitment.**
 
-This repository contains the front-end source code for the optimized, production-ready IBREU Global Talent platform. It has been meticulously structured for elite performance, SEO dominance, and high conversion rate UX/UI.
-
-## 🚀 Features
-
-- **Blazing Fast Performance:** No bloated frameworks, just highly optimized HTML, CSS, and Vanilla JS.
-- **Premium Aesthetics:** Built on a proprietary design system utilizing advanced glassmorphism, responsive topography, and subtle micro-interactions.
-- **Production-Ready SEO:** Fully compliant semantic HTML5, embedded meta descriptors, and automated `sitemap.xml` mapping.
-- **Mobile-First Responsiveness:** Flawless tablet and mobile interactions, including native-level Swiper functionalities and a unified off-canvas mobile menu.
-- **High-Conversion Components:** Integrated FAQ schema, dynamic chart visualization (Chart.js), and native WhatsApp engagement channels.
-
-## 🛠️ Technology Stack
-
-- **HTML5:** Semantic and accessible logic flow.
-- **CSS3:** Custom scoped variables, flexbox/grid integration, custom animations.
-- **JavaScript (ES6):** Vanilla, zero-bloat functionality (Observer-based lazy loading, class toggling).
-- **Libraries Used:** 
-  - [Lucide Icons](https://lucide.dev/) (For robust icon stability)
-  - [Swiper.js](https://swiperjs.com/) (For native-like carousel swiping)
-  - [Chart.js](https://www.chartjs.org/) (For data visualization)
-
-## 📂 Project Structure
-
-```
-├── assets/         # Static assets (images, guides)
-├── css/            # Core styles and premium enhancements
-├── js/             # Interactions (Swiper, FAQ logic, Charts)
-├── *.html          # Core pages (index, candidates, employers...)
-├── sitemap.xml     # SEO crawling config
-└── robots.txt      # Crawl guidelines
-```
-
-## 🖥 Local Development
-
-Since this project consists of static files, you can quickly spin it up using any local dev server.
-
-1. **Clone the repository:**
-   ```bash
-   git clone <repository_url>
-   ```
-
-2. **Serve using Python / Node (or use Live Server in VS Code):**
-   ```bash
-   # Python 3
-   python -m http.server 3000
-   
-   # Or using npx
-   npx serve -l 3000
-   ```
-
-3. **Open Browser:** Navigate to `http://localhost:3000`
+IBREU Global Talent is a high-performance, mobile-first web platform designed for international professionals seeking careers in the UAE and Australia. Built with a "Zero-Bloat" philosophy, it prioritizes speed, SEO, and premium aesthetics.
 
 ---
-*Developed with precision for IBREU Global Talent.*
+
+## 💎 Design System & UX Philosophy
+
+The platform utilizes a proprietary **Premium Glassmorphism Design System** defined in `css/premium.css`.
+
+### Core Principles:
+- **Mobile-First Responsiveness:** All layouts use a custom-built grid utility system (`.grid-2-col`, `.grid-3-col`, `.split-layout`) that gracefully stacks and adapts to any viewport.
+- **Elite Typography:** Leveraging modern font families (Inter/Outfit) with fluid scaling for maximum readability.
+- **Visual Stability:** Optimized image handling and layout shift prevention using standardized container utilities.
+- **Micro-Interactions:** Subtle CSS animations and ScrollReveal.js triggers to enhance engagement without impacting performance.
+
+---
+
+## 🛠️ Technical Stack
+
+- **Core:** Semantic HTML5, CSS3 (Custom Variables/Grid/Flex), Vanilla JavaScript (ES6+).
+- **Icons:** [Lucide Icons](https://lucide.dev/) - Light-weight, consistent SVG icons.
+- **Interactions:** 
+  - [Swiper.js](https://swiperjs.com/) - High-performance touch sliders.
+  - [ScrollReveal.js](https://scrollrevealjs.org/) - Elegant entry animations.
+- **Data:** [Chart.js](https://www.chartjs.org/) - Dynamic data visualization for financial projections.
+
+---
+
+## 📂 Project Architecture
+
+```text
+├── assets/             # Global static resources (Guides, PDF documents)
+├── css/
+│   ├── styles.css      # Core base styles and layout overrides
+│   └── premium.css     # Design System: Tokens, Utilities, Premium Components
+├── js/
+│   ├── main.js         # Core initialization (Navbar, Scroll effects)
+│   ├── swiper-config.js # Carousel and slider logic
+│   └── data-charts.js  # Chart.js implementations for salary data
+├── images/             # Optimized web assets (WebP/SVG)
+├── *.html              # Specialized recruitment landing pages
+├── sitemap.xml         # SEO crawling configuration
+└── robots.txt          # Crawler directives
+```
+
+---
+
+## 📈 SEO & Performance Optimization
+
+- **Lighthouse Targets:** 95+ Score across Performance, SEO, and Accessibility.
+- **Semantic Structure:** Strict adherence to HTML5 heading hierarchies.
+- **Metadata:** Dynamic meta-tags on every page for social sharing and search ranking.
+- **Asset Loading:** Lazy-loading implementation for all non-critical images.
+
+---
+
+## 🚀 Local Development
+
+1. **Clone the Project**
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. **Run Local Server**
+   Use any static file server. For example:
+   ```bash
+   # Using Node.js
+   npx serve .
+   
+   # Using Python
+   python -m http.server 8000
+   ```
+
+3. **Production Build**
+   The project is "ready-to-serve". No build step is required, ensuring maximum developer efficiency and zero dependency drift.
+
+---
+*Developed with Precision by Antigravity AI for IBREU Global Talent.*

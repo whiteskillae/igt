@@ -78,11 +78,111 @@
 /* ================================================================
    CARDS — GLASSMORPHISM & HOVER
    ================================================================ */
-.country-card, .service-card, .value-card, .stat-card {
+.country-card, .service-card, .value-card, .stat-card, .premium-card {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
+
+/* ================================================================
+   RESPONSIVE GRID UTILITIES
+   ================================================================ */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.split-layout.reverse {
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.split-layout.align-start {
+    align-items: flex-start;
+}
+
+/* Visibility Utilities */
+.mobile-hide { display: block; }
+.mobile-show { display: none; }
+
+@media (max-width: 992px) {
+    .grid-2-col, .grid-3-col, .split-layout, .split-layout.reverse {
+        grid-template-columns: 1fr !important;
+        gap: 35px;
+    }
+    
+    .mobile-hide {
+        display: none !important;
+    }
+
+    .mobile-show {
+        display: block !important;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .container {
+        padding: 0 24px;
+        overflow: hidden; /* Prevent horizontal scroll from inner elements */
+    }
+
+    /* Fix for grid cards on tablet */
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 50px 0;
+    }
+    
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Text Stability Utility */
+.force-dark-text p, .force-dark-text li, .force-dark-text h4 {
+    color: #333333 !important;
+}
+
+.force-white-text p, .force-white-text li, .force-white-text h4 {
+    color: rgba(255,255,255,0.9) !important;
+}
+
 
 .glass-dark {
     background: rgba(20, 20, 20, 0.7);
@@ -632,35 +732,8 @@ body:not(.js-active) .fade-up {
 
 
 /* ================================================================
-   FOOTER POLISH
+   NEW PREMIUM EFFECTS & REVEALS
    ================================================================ */
-.footer {
-    border-top: 1px solid rgba(212, 175, 55, 0.15);
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.3);
-}
-
-.footer-logo {
-    font-family: var(--font-heading);
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-
-
-/* ================================================================
-   SCROLL REVEAL
-   ================================================================ */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
