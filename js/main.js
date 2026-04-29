@@ -431,21 +431,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // 3. CAPTCHA VALIDATION
-      const hCaptcha = form.querySelector('[name="h-captcha-response"]')?.value;
-      if (!hCaptcha) {
-        showFormMessage('limit', 'Captcha Required', 'Please complete the "I am human" verification before submitting.');
-        return;
-      }
+      // 3. DATA COLLECTION (Captcha removed as requested)
+
 
       // 4. DATA COLLECTION
       const formData = new FormData(form);
-      const formObject = {};
       let fullMessageSummary = "";
 
+      // Build a readable summary for the 'message' field
       formData.forEach((value, key) => {
-        formObject[key] = value;
-        if (key !== 'access_key' && key !== 'subject' && key !== 'h-captcha-response') {
+        if (key !== 'access_key' && key !== 'subject' && key !== 'h-captcha-response' && key !== 'from_name' && key !== 'message') {
           fullMessageSummary += `${key.toUpperCase()}: ${value}\n`;
         }
       });
@@ -460,13 +455,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Final API fields
-      formObject.access_key = WEB3_ACCESS_KEY;
-      if (!formObject.subject) {
-        formObject.subject = `New Web Inquiry from ${formObject.name || 'Lead'}`;
+      // Add required/overriding fields to FormData
+      formData.set("access_key", WEB3_ACCESS_KEY);
+      if (!formData.get("subject")) {
+        formData.set("subject", `New Inquiry from ${formData.get("name") || 'Web Lead'}`);
       }
-      formObject.from_name = "IBREU Global Talent Portal";
-      formObject.message_summary = fullMessageSummary;
+      formData.set("from_name", "IBREU Global Talent Portal");
+      
+      // If there's an existing message, append the summary to it
+      const existingMsg = formData.get("message") || "";
+      formData.set("message", `--- Form Details ---\n${fullMessageSummary}\n--- Message ---\n${existingMsg}`);
 
       const btn = form.querySelector('button[type="submit"]');
       const ogBtnText = btn ? btn.innerHTML : "Submit";
@@ -478,8 +476,10 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(formObject)
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
         });
         
         const data = await response.json();
@@ -489,13 +489,14 @@ document.addEventListener('DOMContentLoaded', () => {
           localStorage.setItem('igt_submissions', JSON.stringify(storage));
           showFormMessage('success', 'Sent Successfully!', 'Your inquiry has been received. Our team will contact you shortly.');
           form.reset();
-          if(typeof hcaptcha !== 'undefined') hcaptcha.reset();
         } else {
           throw new Error(data.message || 'Submission failed');
         }
       } catch (error) {
         console.error("Submission Error:", error);
-        showFormMessage('error', 'Submission Failed', 'There was a technical problem. Please try again or use WhatsApp.', fullMessageSummary);
+        // Extract the summary for the WhatsApp fallback in case of total failure
+        const summaryForWA = `--- Form Details ---\n${fullMessageSummary}\n--- Message ---\n${formData.get("message") || ""}`;
+        showFormMessage('error', 'Submission Failed', 'There was a technical problem. Please try again or use WhatsApp.', summaryForWA);
       } finally {
         if (btn) {
           btn.innerHTML = ogBtnText;
