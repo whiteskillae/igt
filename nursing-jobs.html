@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/premium.css">
   <link rel="icon" type="image/png" href="images/igtlogo.png">
   <link rel="apple-touch-icon" href="images/igtlogo.png">
+  <!-- hCaptcha API -->
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -278,6 +280,91 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM SECTION -->
+  <section class="section section-offwhite force-dark-text" id="apply-now" style="background: #fdfdfd; padding: 100px 0;">
+    <div class="container">
+      <div class="section-header text-center" style="margin-bottom: 60px;">
+        <span class="section-label reveal">Apply Now</span>
+        <h2 class="reveal delay-1" style="color: #1a1a1a !important; font-weight: 800; font-size: clamp(2rem, 5vw, 2.8rem);">Start Your Global Career</h2>
+        <div class="divider-gold reveal delay-2"></div>
+        <p class="reveal delay-2" style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">Join the elite medical workforce across the globe. Fill in your details below and we'll start your placement journey.</p>
+      </div>
+
+      <div class="reveal delay-2" style="max-width: 900px; margin: 0 auto;">
+        <div class="apply-form-wrap glass-light" style="box-shadow: 0 30px 70px rgba(0,0,0,0.08); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 40px; padding: clamp(25px, 5vw, 60px); background: #fff; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--grad-gold);"></div>
+          
+          <form novalidate>
+            <input type="hidden" name="subject" value="New Application - Global Nursing Jobs">
+            
+            <div class="form-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 25px;">
+              <div class="form-group">
+                <label style="display: block; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Full Name *</label>
+                <input type="text" name="name" class="form-control" required placeholder="John Doe" style="width: 100%; padding: 16px 20px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; transition: border-color 0.3s ease; font-size: 1rem;">
+              </div>
+              <div class="form-group">
+                <label style="display: block; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Phone Number *</label>
+                <div style="display: flex; gap: 12px;">
+                  <select name="dial_code" class="form-control" required style="width: 130px; padding: 16px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; cursor: pointer; font-size: 0.95rem;">
+                    <option value="+971">UAE (+971)</option>
+                    <option value="+91">India (+91)</option>
+                    <option value="+92">Pakistan (+92)</option>
+                    <option value="+63">Philippines (+63)</option>
+                    <option value="+234">Nigeria (+234)</option>
+                    <option value="+254">Kenya (+254)</option>
+                    <option value="+44">UK (+44)</option>
+                    <option value="+1">USA (+1)</option>
+                  </select>
+                  <input type="tel" name="phone" class="form-control" required placeholder="50 123 4567" style="flex: 1; padding: 16px 20px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; font-size: 1rem;">
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 25px;">
+              <div class="form-group">
+                <label style="display: block; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Email Address *</label>
+                <input type="email" name="email" class="form-control" required placeholder="email@example.com" style="width: 100%; padding: 16px 20px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; font-size: 1rem;">
+              </div>
+              <div class="form-group">
+                <label style="display: block; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Target Country *</label>
+                <select name="job_type" class="form-control" required style="width: 100%; padding: 16px 20px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; cursor: pointer; font-size: 1rem;">
+                  <option value="UAE">UAE</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                  <option value="Georgia">Georgia</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 25px;">
+              <div class="form-group">
+                <label style="display: block; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Current Residence *</label>
+                <input type="text" name="residence" class="form-control" required placeholder="City, Country" style="width: 100%; padding: 16px 20px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; font-size: 1rem;">
+              </div>
+              <div class="form-group">
+                <label style="display: block; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Qualification *</label>
+                <input type="text" name="qualification" class="form-control" required placeholder="e.g. B.Sc Nursing, Diploma" style="width: 100%; padding: 16px 20px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; font-size: 1rem;">
+              </div>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 30px;">
+              <label style="display: block; margin-bottom: 10px; font-weight: 700; color: #1a1a1a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Additional Message</label>
+              <textarea name="message" class="form-control" rows="4" placeholder="Mention your specialization or years of experience..." style="width: 100%; padding: 16px 20px; border-radius: 15px; border: 2px solid #eee; font-family: inherit; resize: vertical; font-size: 1rem;"></textarea>
+            </div>
+            
+            <!-- hCaptcha -->
+            <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" style="margin-bottom: 30px;"></div>
+
+            <button type="submit" class="btn btn-cta" style="width: 100%; padding: 20px; border-radius: 18px; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 15px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.4s ease;">
+              <i data-lucide="send" style="width: 24px; height: 24px;"></i> Submit Application
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
